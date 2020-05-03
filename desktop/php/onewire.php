@@ -290,5 +290,5 @@ $deamonRunning = onewire::deamon_info();
 <!-- <SCRIPT LANGUAGE="Javascript"> window.alert(Object.entries(contextmenuitems).length.tostring()); </script> -->
                 
 <?php include_file('desktop', 'onewire', 'js', 'onewire'); ?>
-<?php include_file('core', 'plugin.template', 'js'); ?>
-<!-- <?php include_file('desktop', 'plugin.template.dev', 'js', 'onewire'); ?> -->
+<!-- <?php include_file('core', 'plugin.template', 'js'); ?> -->
+<?php include_file('desktop', 'plugin.template.dev', 'js', 'onewire'); ?>
