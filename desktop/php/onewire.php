@@ -82,7 +82,7 @@ $deamonRunning = onewire::deamon_info();
                   <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Documentation}}</center></span>
 			</div>
 		</div>
-        
+     </div>   
               
 <!-- Menu mes equipements -->    
                 
