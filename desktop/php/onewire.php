@@ -30,10 +30,6 @@ $deamonRunning = onewire::deamon_info();
   <script src="https://kit.fontawesome.com/4f90f8faf4.js" crossorigin="anonymous"></script>
     <div class="row row-overflow">
 
-    <!--debug test -->
-    <?php
-        echo 'test plugin id'. $plugin->getId().' fin test';
-    ?>
 <!-- Menu de gauche -->
 
 	<div class="col-lg-2 col-md-3 col-sm-4">
