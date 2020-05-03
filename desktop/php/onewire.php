@@ -31,11 +31,11 @@ $deamonRunning = onewire::deamon_info();
     <div class="row row-overflow">
 
     <!--debug test -->
- <!--   <?php
+    <?php
         echo '<script language="javascript">';
         echo 'alert('.$plugin->getId().')';
         echo '</script>';
-    ?> -->
+    ?>
 <!-- Menu de gauche -->
 
 	<div class="col-lg-2 col-md-3 col-sm-4">
