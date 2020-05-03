@@ -93,7 +93,7 @@ $deamonRunning = onewire::deamon_info();
 					<span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#BE0104"><center>Ajouter</center></span>
 				</div>
                 <?php
-                foreach ($eqLogics as $eqLogic) {
+/*                foreach ($eqLogics as $eqLogic) {
                   	$opacity = ($eqLogic->getIsEnable()) ? '' : 'disableCard';
                     echo '<div class="eqLogicDisplayCard cursor '.$opacity. '" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >';
                     echo "<center>";
@@ -110,7 +110,7 @@ $deamonRunning = onewire::deamon_info();
                     echo "</center>";
                     echo '<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>' . $eqLogic->getHumanName(true, true) . '</center></span>';
                     echo '</div>';
-                }
+                }*/
                 ?>
             </div>
     </div>
