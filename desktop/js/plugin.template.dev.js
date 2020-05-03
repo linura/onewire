@@ -76,7 +76,7 @@ $(function(){
           }
           contextmenuitems[group] = {'name':group, 'items':items}
         }
-        //window.alert(Object.entries(contextmenuitems).name)
+        
         if (Object.entries(contextmenuitems).length > 0 && contextmenuitems.constructor === Object){
 //          $('.nav.nav-tabs').contextMenu({
 //            selector: 'li',
