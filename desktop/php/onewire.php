@@ -112,8 +112,7 @@ $deamonRunning = onewire::deamon_info();
                 }
                 ?>
             </div>
-    </div>
- </div>               
+    </div>              
 <!-- configuration des équipement -->
                   
         <div class="col-lg-10 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
