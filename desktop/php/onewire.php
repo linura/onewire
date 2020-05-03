@@ -28,6 +28,7 @@ $deamonRunning = onewire::deamon_info();
 ?>
   <!-- script pour les icons perso -->
   <script src="https://kit.fontawesome.com/4f90f8faf4.js" crossorigin="anonymous"></script>
+  
     <div class="row row-overflow">
 
 <!-- Menu de gauche -->
