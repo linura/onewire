@@ -16,6 +16,7 @@
 
 /* modifier le 02/05/2020 par lebansais Christophe
 * developper pour rendre le plugin onewire compatible avec la v4 de jeedom
+* fichier temporaire pour le developpement
 */
 
 //contextMenu
