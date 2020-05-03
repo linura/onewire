@@ -49,7 +49,8 @@ $deamonRunning = onewire::deamon_info();
 <!-- Menu gestion -->
                
 <!--	<div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">   -->
- 		<legend><i class="fas fa-cog"></i>{{Gestion}}</legend>
+<div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" > 
+         <legend><i class="fas fa-cog"></i>{{Gestion}}</legend>
 		<div class="eqLogicThumbnailContainer">
 
 		    <div class="cursor" id="bt_owfsTable" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 200px;margin-left : 10px;" >
@@ -80,7 +81,7 @@ $deamonRunning = onewire::deamon_info();
                 </center>
                   <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Documentation}}</center></span>
 			</div>
-<!--		</div> -->
+		</div>
         
               
 <!-- Menu mes equipements -->    
