@@ -5,19 +5,19 @@ if (!isConnect('admin')) {
 
 $plugin = plugin::byId('onewire');
 
-$plugin_email = ((int)config::byKey('active', 'mail')>0 ? true : false);
-$listemail = array();
+//$plugin_email = ((int)config::byKey('active', 'mail')>0 ? true : false);
+//$listemail = array();
 
-if($plugin_email){
-   foreach (eqLogic::byType('mail') as $eqLogic) {
-     $listemail[$eqLogic->getId()] =$eqLogic->getHumanName();
-   }
-}
+//if($plugin_email){
+//   foreach (eqLogic::byType('mail') as $eqLogic) {
+//     $listemail[$eqLogic->getId()] =$eqLogic->getHumanName();
+//   }
+//}
 
 $eqLogics = eqLogic::byType($plugin->getId()) ;
 
-sendVarToJS('ListEmail',$listemail);
-sendVarToJS('pluginEmail',$plugin_email);
+//sendVarToJS('ListEmail',$listemail);
+//sendVarToJS('pluginEmail',$plugin_email);
 sendVarToJS('eqType', $plugin->getId());
 
 $deamonRunning = onewire::deamon_info();
