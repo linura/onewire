@@ -62,13 +62,13 @@ $(function(){
         var uniqId = 0
         for (var group in eqsList) {
           groupEq = eqsList[group]
-          //window.alert(eqsList[group]);
+          //window.alert(eqsList[group])
           items = {}
           for (var index in groupEq) {
             eq = groupEq[index]
             //window.alert(eq)
             eqName = eq[0]
-            //window.alert(eqName);
+            //window.alert(eqName)
             eqId = eq[1]
             //window.alert(eq[1])
             items[uniqId] = {'name': eqName, 'id' : eqId}
@@ -76,7 +76,7 @@ $(function(){
           }
           contextmenuitems[group] = {'name':group, 'items':items}
         }
-        
+        window.alert(.contextMenu
         if (Object.entries(contextmenuitems).length > 0 && contextmenuitems.constructor === Object){
 //          $('.nav.nav-tabs').contextMenu({
 //            selector: 'li',
