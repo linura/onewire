@@ -32,9 +32,7 @@ $deamonRunning = onewire::deamon_info();
 
     <!--debug test -->
     <?php
-        echo '<script language="javascript">';
-        echo 'alert('.$plugin->getId().')';
-        echo '</script>';
+        echo $plugin->getId();
     ?>
 <!-- Menu de gauche -->
 
