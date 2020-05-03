@@ -19,7 +19,7 @@ $eqLogics = eqLogic::byType($plugin->getId()) ;
 sendVarToJS('ListEmail',$listemail);
 sendVarToJS('pluginEmail',$plugin_email);
 sendVarToJS('eqType', $plugin->getId());
-
+//afficher les message si le deamon owfs ne fonctionne pas
 $deamonRunning = onewire::deamon_info();
 	if($deamonRunning['state'] != 'ok'){
       echo '<div class="alert alert-danger">ATTENTION LE DEMON OWFS NE TOURNE PAS !!! </div>';
@@ -57,7 +57,7 @@ $deamonRunning = onewire::deamon_info();
 				<i class="fas fa-project-diagram" style="font-size : 5em;color:indigo;"></i>
 			  </center>
 			  <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Afficher les composants du bus}}</center></span>
-			</div>
+		    </div>
 
 
 			<div class="cursor" id="bt_reload_owfs" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
@@ -79,7 +79,7 @@ $deamonRunning = onewire::deamon_info();
                   </center>
                   <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Documentation}}</center></span>
 			</div>
-		</div>
+	    </div>
               
 <!-- Menu mes equipements -->    
                 
@@ -113,7 +113,7 @@ $deamonRunning = onewire::deamon_info();
                 ?>
             </div>
     </div>
-                
+ </div>               
 <!-- configuration des équipement -->
                   
         <div class="col-lg-10 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
@@ -280,6 +280,7 @@ $deamonRunning = onewire::deamon_info();
         </div>
     </div>
 
+<!-- Debug à supprimer lors de la mise en stable -->
 <!-- <SCRIPT LANGUAGE="Javascript"> window.alert(Object.entries(contextmenuitems).length.tostring()); </script> -->
                 
 <?php include_file('desktop', 'onewire', 'js', 'onewire'); ?>
