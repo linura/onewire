@@ -32,7 +32,7 @@ $deamonRunning = onewire::deamon_info();
 
     <!--debug test -->
     <?php
-        echo $plugin->getId();
+        echo 'test plugin id'. $plugin->getId().' fin test';
     ?>
 <!-- Menu de gauche -->
 
