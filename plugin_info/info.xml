@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+    <id>onewire</id>
+    <name>1Wire</name>
+    <description>Plugin permettant de gérer le Bus 1wire</description>
+    <icon>fa fa-caret-square-o-right</icon>
+    <licence>AGPL</licence>
+    <author>Mickael Hurier</author>
+    <installation>
+        Selectionner dans la liste deroulante pour afficher le srcipt d installation.
+    </installation>
+    <require>1.34</require>
+    <version>2.7</version>
+    <category>automation protocol</category>
+</info>
+
