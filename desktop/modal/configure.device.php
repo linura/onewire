@@ -32,7 +32,7 @@ if(count($cmd)>0)
 $class = onewireCmd::getclass($cmd->getConfiguration('composantName') ,$cmd->getConfiguration('composantGroup',false),false);
 $select = '<option>choisir</option>';
 foreach ($class as $c => $cl){
-    $select .= '<option value="'.$cl.'">'.$cl.'</option>';
+    $select = '<option value="'.$cl.'">'.$cl.'</option>';
 }
 
 sendVarToJS('configureDeviceId', init('id'));
