@@ -49,37 +49,37 @@ $deamonRunning = onewire::deamon_info();
 <!-- Menu gestion -->
                
 <!--	<div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">   -->
-<!-- 		<legend><i class="fas fa-cog"></i>{{Gestion}}</legend>  -->
-<!--		<div class="eqLogicThumbnailContainer"> -->
+ 		<legend><i class="fas fa-cog"></i>{{Gestion}}</legend>
+		<div class="eqLogicThumbnailContainer">
 
-<!--		    <div class="cursor" id="bt_owfsTable" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 200px;margin-left : 10px;" >
+		    <div class="cursor" id="bt_owfsTable" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 200px;margin-left : 10px;" >
 			    <center>
 				    <i class="fas fa-project-diagram" style="font-size : 5em;color:indigo;"></i>
 			    </center>
 			    <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Afficher les composants du bus}}</center></span>
-			</div>  -->
+			</div>
 
 
-<!--			<div class="cursor" id="bt_reload_owfs" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
+			<div class="cursor" id="bt_reload_owfs" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
 			  <center>
                     <i class="fa fa-refresh fa-spin" style="font-size : 5em;color:#767676;"></i>
 			  </center>
 			  <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Relancer OWFS}}</center></span>
-			</div>  -->
+			</div>
 
-<!--			<div class="cursor" id="bt_stop_owfs" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
+			<div class="cursor" id="bt_stop_owfs" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
 			  <center>
 			        <i class="fas fa-stop-circle" style="font-size : 5em;color:red;"></i>
 			  </center>
 			  <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Arreter OWFS}}</center></span>
-			</div>  -->
+			</div>
 
- <!--           <div class="cursor" id="bt_docSpecific" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
+            <div class="cursor" id="bt_docSpecific" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
                 <center>
                     <i class="fas fa-book" style="font-size : 5em;color:#767676;"></i>
                 </center>
                   <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Documentation}}</center></span>
-			</div>  -->
+			</div>
 <!--		</div> -->
         
               
