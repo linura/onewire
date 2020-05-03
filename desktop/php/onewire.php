@@ -29,7 +29,7 @@ $deamonRunning = onewire::deamon_info();
   <!-- script pour les icons perso -->
   <script src="https://kit.fontawesome.com/4f90f8faf4.js" crossorigin="anonymous"></script>
     <div class="row row-overflow">
-  
+    <SCRIPT LANGUAGE="Javascript"> window.alert($plugin->getId()); </script> 
 <!-- Menu de gauche -->
 
 	<div class="col-lg-2 col-md-3 col-sm-4">
@@ -47,7 +47,7 @@ $deamonRunning = onewire::deamon_info();
     </div>
                   
 <!-- Menu gestion -->
-<SCRIPT LANGUAGE="Javascript"> window.alert($plugin->getId()); </script>             
+            
 	<div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">
          <legend><i class="fas fa-cog"></i>{{Gestion}}</legend>
 		<div class="eqLogicThumbnailContainer">
