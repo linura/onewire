@@ -49,7 +49,7 @@ $deamonRunning = onewire::deamon_info();
 <!-- Menu gestion -->
                
 <!--	<div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">   -->
-<div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" > 
+<div class="col-xs-12 eqLogicThumbnailDisplay" > 
          <legend><i class="fas fa-cog"></i>{{Gestion}}</legend>
 		<div class="eqLogicThumbnailContainer">
 
