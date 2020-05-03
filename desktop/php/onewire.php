@@ -31,7 +31,7 @@ $deamonRunning = onewire::deamon_info();
     <div class="row row-overflow">
   
 <!-- Menu de gauche -->
-<div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;"> 
+
 	<div class="col-lg-2 col-md-3 col-sm-4">
         <div class="bs-sidebar">
             <ul id="ul_eqLogic" class="nav nav-list bs-sidenav">
@@ -48,7 +48,7 @@ $deamonRunning = onewire::deamon_info();
                   
 <!-- Menu gestion -->
                
-<!--	<div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;"> -->
+	<div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">
          <legend><i class="fas fa-cog"></i>{{Gestion}}</legend>
 		<div class="eqLogicThumbnailContainer">
 
