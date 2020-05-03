@@ -50,7 +50,7 @@ $deamonRunning = onewire::deamon_info();
                
 	<div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">   
 		<legend><i class="fas fa-cog"></i>{{Gestion}}</legend>
-		<div class="eqLogicThumbnailContainer">
+<!--		<div class="eqLogicThumbnailContainer"> -->
 
 <!--		    <div class="cursor" id="bt_owfsTable" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 200px;margin-left : 10px;" >
 			    <center>
