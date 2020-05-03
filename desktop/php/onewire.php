@@ -29,7 +29,13 @@ $deamonRunning = onewire::deamon_info();
   <!-- script pour les icons perso -->
   <script src="https://kit.fontawesome.com/4f90f8faf4.js" crossorigin="anonymous"></script>
     <div class="row row-overflow">
-    <SCRIPT LANGUAGE="Javascript"> window.alert($plugin->getId()); </script> 
+
+    <!--debug test -->
+    <?php
+        echo '<script language="javascript">';
+        echo 'alert('.$plugin->getId().')';
+        echo '</script>';
+    ?>
 <!-- Menu de gauche -->
 
 	<div class="col-lg-2 col-md-3 col-sm-4">
