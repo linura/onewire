@@ -133,9 +133,9 @@ $deamonRunning = onewire::deamon_info();
         <!-- Onglet "Commandes" -->
         <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i
                     class="fa fa-list-alt"></i> {{Commandes}}</a></li>
-      </ul>              
+      </ul>        
+      <div role="tabpanel" class="tab-pane active" id="eqlogictab">
         <div class="col-lg-10 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
-        <div role="tabpanel" class="tab-pane active" id="eqlogictab">
         <div class="row">
             <div class="col-sm-6">
                 <form class="form-horizontal">
