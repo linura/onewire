@@ -70,14 +70,12 @@ class onewire extends eqLogic {
     public static function cron() {
         foreach (eqLogic::byType('onewire') as $eqLogic) {
             $autorefresh = $eqLogic->getConfiguration('autorefresh');
-           // log::add('onewire', 'debug', 'Cron ok ->  autorefresh = '.$autorefresh. 'et Enabled = '.$eqLogic->getIsEnable());
             $autorefresh = ($autorefresh=="" ? '* * * * * *' : $autorefresh);
             if ($eqLogic->getIsEnable() == 1 && $autorefresh != '') {
                 try {
                     $c = new Cron\CronExpression($autorefresh, new Cron\FieldFactory);
                     if ($c->isDue()) {
                         try {
-                           // log::add('onewire', 'debug', 'Cron ok -> activé');
                             foreach ($eqLogic->getCmd('info') as $cmd) {
 
                                 log::add('monhistory', 'info', 'Cron lancé');
@@ -111,7 +109,6 @@ public static function test_connexion($mode=false,$connexion=false,$host=false,$
 						else
 							return $error;
 					}else{
-					//print $connexion.','.$login.','.$pass;
 						if (!@ssh2_auth_password($connexion,$login,$pass)){
 							$error = 'Erreur d authentification GPIO verifier le login ('.$login.') ainsi que votre mdp ';
 							log::add('onewire', 'error',$error);
@@ -134,7 +131,6 @@ public static function test_connexion($mode=false,$connexion=false,$host=false,$
 					}
 				/* DISTANT OWFS */
 				}else{
-					//print "mode owfs  tcp://".$host.":".$port;
 					if(!$ow = new OWNet("tcp://".$host.":".$port)){
 						$error = 'Erreur de connexion OWFS  verifier le host ('.$host.') ainsi que votre port ('.$port.')';
 						if($rsftp)
@@ -277,7 +273,6 @@ public function getHistoryCall($sensor_id){
 public function getclass($name,$group=false,$ajax=true){
         $sql = 'SELECT class, class2 from onewire where name like( "'.$name.'" )'.($group ? ' AND groupe like ("'.$group.'")  ' : '');
         $result =  DB::Prepare($sql, array(), DB::FETCH_TYPE_ALL);
-        //$result = Tools::ExecuteS($sql);
         if(!$result)
             echo 'Erreur de REquete MYSQL :'.$sql;
         else{
@@ -306,7 +301,6 @@ public function getclass($name,$group=false,$ajax=true){
 public function getgroup($name){
         $sql = 'SELECT  groupe from  onewire where name like ("'.$name.'")';
         $result =  DB::Prepare($sql, array(), DB::FETCH_TYPE_ALL);
-        //$result = Tools::ExecuteS($sql);
         $tabgroup = array();
         foreach ($result as $res => &$val){
             $tabgroup[] = $val['groupe'];
@@ -317,7 +311,6 @@ public function getgroup($name){
 public function getIsgroup($name){
         $sql = 'SELECT count(*) as nb  from onewire where name like ("'.$name.'") and groupe != "" and groupe is not null';
         $result =  DB::Prepare($sql, array(), DB::FETCH_TYPE_ROW);
-        //$result = Tools::getRow($sql);
         if($result['nb']>0)
             echo json_encode('ok');
         else
@@ -346,12 +339,9 @@ public function getIsgroup($name){
     }
 
 public function mailAlert($obj,$value){
-  //  log::add('onewireMail', 'info', 'Fonction mailAlert');
 	$plugin_email = ((int)config::byKey('active', 'mail')>0 ? true : false);
-	//$plugin_virtuel = ((int)config::byKey('active', 'virtual')>0 ? true : false);
 
-	if($plugin_email /*&& $plugin_virtuel */ && (int)$this->getConfiguration('mail_error')>0){
-		//log::add('onewireMail', 'info', 'Email installé et commande en alerte');
+	if($plugin_email && (int)$this->getConfiguration('mail_error')>0){
 		onewireCmd::OneWireSendMail($obj,$value);
 	}else{
 		if( (int)$this->getConfiguration('mail_error')>0)
@@ -371,12 +361,10 @@ public function mailAlert($obj,$value){
 		$reste = ($difference%3600);
 		$minute = floor($reste/60);
 		return $minute;
-
-		//return $jour.' jour(s), '.$heure.' heure(s) et '.$minute.' minute(s)';
 	}
 
 
-function OneWireSendMail($obj,$value/*,$virtuel*/){
+function OneWireSendMail($obj,$value){
 
     $equipement = $obj->getEqLogic();
 	$date = new DateTime();
@@ -441,8 +429,6 @@ function OneWireSendMail($obj,$value/*,$virtuel*/){
 }
 public function TypeGPIO_light_esclave($ajax=false){
 
-
-			//  log::add('deportonewire', 'debug', 'fonction TypeGPIO_light_esclave');
 			log::add('onewire', 'debug', 'Distant->composant   trouvée : '.$this->getConfiguration('instanceId'));
 
 			$equipement = eqLogic::byId($this->getEqLogic_id(), 'onewire');
@@ -480,7 +466,6 @@ public function TypeGPIO_light_esclave($ajax=false){
 }
 public function TypeGPIO_light($ajax=false){
 	log::add('onewire', 'debug', 'TypeGPIO_light()-> Traitement du composant : '.$this->getConfiguration('instanceId'));
-	//find /sys/bus/w1/devices/ -name 28-00000595d231 -exec cat {}/w1_slave \; | grep "t=" | awk -F "t=" '{print $2/1000}'
 	 $sonde = "find /sys/bus/w1/devices/ -name  ".trim(str_replace(".","-",$this->getConfiguration('instanceId')))."  -exec cat {}/w1_slave \\; | grep \"t=\" | awk -F \"t=\" '{print $2/1000}'";
 	 $temp = trim(exec($sonde));
 	 if(!$temp || $temp ===NULL)
@@ -509,18 +494,13 @@ public function TypeOwserver($ajax=false){
 
        $ow_presence = "/".trim($this->getConfiguration('instanceId'));
        $ow_cmd =  "/".trim($this->getConfiguration('instanceId'))."/".trim($this->getConfiguration('composantClass'));
-		//log::add('onewire', 'debug', "Commande envoyée : ".$ow_cmd);
 		/*Lecture de cla class 2*/
 		if($this->getConfiguration('composantClass2','false')!='false'){
-			// log::add('onewire', 'debug', "Class2 détéctée");
 			$ow_class2 = "/".trim($this->getConfiguration('adresse')).'/'.trim($this->getConfiguration('composantClass2'));
 			log::add('onewire', 'debug', '---ow_class2 : '.$ow_class2);
-			//$ow_presence .= "/".trim($this->getConfiguration('composantClass')).$ow_class2;
 			$ow_cmd .= $ow_class2;
-
 		}
 		log::add('onewire', 'debug', "Commande envoyée : ".$ow_cmd);
-		//log::add('onewire', 'debug', "Commande d : ".$ow_presence);
 
         if($ow->presence($ow_presence)) {
             log::add('onewire', 'debug', 'Le composant '.$this->getConfiguration('instanceId').' existe.');
@@ -552,8 +532,6 @@ public function TypeOwserver($ajax=false){
                 log::add('onewire', 'debug', 'Impossible de trouver : '.$ow_presence);
             if($ajax)
                 print 'Le composant '.$this->getConfiguration('instanceId').' n existe pas !!!!';
-
-         //   log::add('onewire', 'error',   'Le composant '.$this->getConfiguration('instanceId').' n existe pas !!!!');
             return false;
         }
 
@@ -640,7 +618,6 @@ public function TypeOwserver($ajax=false){
 
 
 	    /*Gestion des alertes*/
-       // if((int)$this->getConfiguration('mail_error') > 0)
         onewireCmd::MailAlert($this,$temp);
         if($temp !== null){//$temp!=0
 
