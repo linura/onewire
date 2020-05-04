@@ -54,10 +54,7 @@ $deamonRunning = onewire::deamon_info();
 		<div class="eqLogicThumbnailContainer">
         <!-- test -->
         <ul class="nav nav-tabs" role="tablist">
-			<li role="presentation"><a href="#" class="eqLogicAction" aria-controls="home" role="tab" data-toggle="tab" data-action="returnToThumbnailDisplay"><i class="fa fa-arrow-circle-left"></i></a></li>
-			<li role="presentation" class="active"><a href="#eqlogictab" aria-controls="home" role="tab" data-toggle="tab"><i class="fas fa-tachometer-alt"></i> {{Equipement}}</a></li>
-			<li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Commandes}}</a></li>
-		</ul>
+			
         <!-- fin test -->
 		    <div class="cursor" id="bt_owfsTable" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 200px;margin-left : 10px;" >
 			    <center>
@@ -87,6 +84,7 @@ $deamonRunning = onewire::deamon_info();
                 </center>
                   <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Documentation}}</center></span>
 			</div>
+            </ul>
 		</div>   
               
 <!-- Menu mes equipements -->    
