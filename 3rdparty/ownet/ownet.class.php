@@ -58,35 +58,20 @@ from http://www.linuxjournal.com/article/6788
 $port = config::byKey('wire_port','onewire', '4304');
 $host = config::byKey('wire_host','onewire', '127.0.0.1');
 
-   // print '---'.$port;
-
 define('OWNET_DEFAULT_HOST'	,$host);
 define('OWNET_DEFAULT_PORT'	,$port);
 define('OWNET_LINK_TYPE_SOCKET'	,0);
 define('OWNET_LINK_TYPE_STREAM'	,1);
 define('OWNET_LINK_TYPE_TCP'	,0);
 define('OWNET_LINK_TYPE_UDP'	,1);
-
-/*
-Constants for the owserver api message types. from ow.h
-enum msg_classification {
-    msg_error,
-    msg_nop,
-    msg_read,
-    msg_write,
-    msg_dir,
-    msg_size,			// No longer used, leave here to compatibility
-    msg_presence,
-};
-*/
-define('OWNET_MSG_ERROR'	,0);
-define('OWNET_MSG_NOP'		,1);
-define('OWNET_MSG_READ'		,2);
-define('OWNET_MSG_WRITE'	,3);
-define('OWNET_MSG_DIR'		,4);
-define('OWNET_MSG_SIZE'		,5);
-define('OWNET_MSG_PRESENCE'	,6);
-define('OWNET_MSG_DIR_ALL'	,7);
+define('OWNET_MSG_ERROR'		,0);
+define('OWNET_MSG_NOP'			,1);
+define('OWNET_MSG_READ'			,2);
+define('OWNET_MSG_WRITE'		,3);
+define('OWNET_MSG_DIR'			,4);
+define('OWNET_MSG_SIZE'			,5);
+define('OWNET_MSG_PRESENCE'		,6);
+define('OWNET_MSG_DIR_ALL'		,7);
 define('OWNET_MSG_READ_ANY'	,99999);
 
 
