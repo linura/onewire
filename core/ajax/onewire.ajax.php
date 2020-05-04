@@ -85,8 +85,6 @@ try {
 		$sensor_class =  init('sensor_class');
 		$cmd = cmd::byId(init('sensor_id'));
         return $cmd->getValue(true);
-
-        //ajax::success();
     }
         if (init('action') == 'AddSendHistory') {
 		$sensor_class =  init('sensor_class');
@@ -94,7 +92,6 @@ try {
 		$history_type =  init('history_type');
 		$sensor_value =  init('sensor_value');
         return onewireCmd::AddSendHistory($sensor_id,$sensor_class,$sensor_value,$history_type);
-        //ajax::success();
     }
 
 
@@ -106,21 +103,17 @@ try {
 
 
     if(init('action') == 'isgroup'){
-       // $name = $_POST['name'];
         $name =  init('name');
         return onewireCmd::getIsgroup($name);
     }
 
     if(init('action') == 'getclass'){
-       // $name = $_POST['name'];
         $name =  init('name',false);
-       // $group = (isset($_POST['group']) ? $_POST['group'] : false);
         $group =  init('group');
         return onewireCmd::getclass($name,$group);
     }
 
     if(init('action') == 'getgroup'){
-        //$name = $_POST['name'];
         $name =  init('name');
         return onewireCmd::getgroup($name);
     }
