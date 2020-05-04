@@ -132,16 +132,14 @@ $deamonRunning = onewire::deamon_info();
         <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i
                     class="fa fa-list-alt"></i> {{Commandes}}</a></li>
       </ul>        
+                  
       <div role="tabpanel" class="tab-pane active" id="eqlogictab">
-<!--        <div class="col-lg-10 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
-        <div class="row"> -->
-            <div class="col-sm-6">
-            <div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
+        <div class="row">
+            <div class="tab-content" style="height:calc(100%);overflow:auto;overflow-x: hidden;">
                 <div role="tabpanel" class="tab-pane active" id="eqlogictab">
                     <br/>
                 <form class="form-horizontal">
                     <fieldset>
-                    <legend><i class="fa fa-arrow-circle-left eqLogicAction cursor" data-action="returnToThumbnailDisplay"></i> {{Général}}<i class='fa fa-cogs eqLogicAction pull-right cursor expertModeVisible' data-action='configure'></i></legend>
                         <div class="form-group">
                             <label class="col-lg-3 control-label">{{Nom de l équipement}}</label>
                             <div class="col-lg-4">
@@ -200,8 +198,7 @@ $deamonRunning = onewire::deamon_info();
                     </fieldset>
                 </form>
             </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="commandtab">
+              <div role="tabpanel" class="tab-pane active" id="eqlogictab">
                <div class="col-sm-6">
                 <form class="form-horizontal">
                     <fieldset>
@@ -264,18 +261,15 @@ $deamonRunning = onewire::deamon_info();
                                  <a class="btn btn-success eqLogicAction" style="margin-left:10px;margin-bottom: 17px;" data-action="bt_testConnexion"><i class="fa fa-plus-circle"></i> {{Tester}}</a>
                                  </div>
                         </div>
-
 					</fieldset>
 					</form>
+                   </div>
                 </div>
-            </div>
-        </div>
-        </div>
-        
+        <div role="tabpanel" class="tab-pane" id="commandtab">
             <legend>Commandes</legend>
             <a class="btn btn-success btn-sm cmdAction " data-action="add"><i class="fa fa-plus-circle"></i> {{Commandes}}</a>
             <a class="btn btn-default" id="bt_configureDevice" title="Configurer"><i class="fa fa-wrench"></i></a><br/><br/>
-            <table id="table_cmd" class="table table-bordered table-condensed">
+            <table id="table_cmd" class="table table-bordered  table-condensed">
                 <thead>
                 <tr>
                     <th style="width: 200px;">{{Nom}}</th>
@@ -293,7 +287,6 @@ $deamonRunning = onewire::deamon_info();
                 </tbody>
             </table>
             </div>
-    <div role="tabpanel" class="tab-pane" id="commandtab">
         <form class="form-horizontal">
             <fieldset>
                 <div class="form-actions">
