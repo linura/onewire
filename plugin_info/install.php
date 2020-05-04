@@ -45,10 +45,6 @@ function onewire_update() {
         log::add('onewire', 'debug', 'Les  champs class2  existes deja dans table onewire');
     }
 
-     //UPDATE onewire SET `class2`='[address|alias|crc8|errata|family|fasttemp|id|locator|power|r_address|r_id|r_locator|scratchpad|temperature|temperature10|temperature11|temperature12|temperature9|temphigh|templow|type]' WHERE `id`='36';
-	//$sql = file_get_contents(dirname(__FILE__) . '/update.sql');
-	//DB::Prepare($sql, array(), DB::FETCH_TYPE_ROW);
-
 	$sql = " UPDATE onewire SET `class2`='[address|alias|crc8|errata|family|fasttemp|id|locator|power|r_address|r_id|r_locator|scratchpad|temperature|temperature10|temperature11|temperature12|temperature9|temphigh|templow|type]' WHERE `id`='36';";
 	DB::Prepare($sql, array(), DB::FETCH_TYPE_ROW);
 
