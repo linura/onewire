@@ -135,9 +135,12 @@ $deamonRunning = onewire::deamon_info();
                     class="fa fa-list-alt"></i> {{Commandes}}</a></li>
       </ul>        
       <div role="tabpanel" class="tab-pane active" id="eqlogictab">
-        <div class="col-lg-10 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
-        <div class="row">
+<!--        <div class="col-lg-10 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
+        <div class="row"> -->
             <div class="col-sm-6">
+            <div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
+                <div role="tabpanel" class="tab-pane active" id="eqlogictab">
+                    <br/>
                 <form class="form-horizontal">
                     <fieldset>
                     <legend><i class="fa fa-arrow-circle-left eqLogicAction cursor" data-action="returnToThumbnailDisplay"></i> {{Général}}<i class='fa fa-cogs eqLogicAction pull-right cursor expertModeVisible' data-action='configure'></i></legend>
@@ -265,7 +268,7 @@ $deamonRunning = onewire::deamon_info();
 					</fieldset>
 					</form>
             </div>
-        </div>
+        
         </div>
         <div role="tabpanel" class="tab-pane" id="commandtab">
             <legend>Commandes</legend>
@@ -300,6 +303,7 @@ $deamonRunning = onewire::deamon_info();
         </form>
 
         </div>
+    </div>
     </div>
     </div>
 
