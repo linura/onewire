@@ -1,7 +1,5 @@
 <?php
 
-//ini_set('display_errors', 1);
-//error_reporting(E_ALL);
 if (!isConnect('admin')) {
     throw new Exception('401 Unauthorized');
 }
@@ -23,7 +21,7 @@ foreach ($eqLogics as $eqLogic){
 	$ip = ($eqLogic->getConfiguration('onewire_addressip') != '' && $connexion != 'local' ? $eqLogic->getConfiguration('onewire_addressip')  : 'localhost');
 		foreach ($eqLogic->getCmd('info') as $cmd) {
 			$instance_id = 	$cmd->getConfiguration('instanceId');
-			$tab_conposant[$instance_id]['id'] = $cmd->getConfiguration('instanceId');//		print $cmd->getConfiguration('instanceId'). ' existe';
+			$tab_conposant[$instance_id]['id'] = $cmd->getConfiguration('instanceId');
 			$tab_conposant[$instance_id]['cmdvisible'] = $eqLogic->getIsVisible();
 			$tab_conposant[$instance_id]['eqvisible'] = $cmd->getIsVisible();
 			$tab_conposant[$instance_id]['actif'] = $eqLogic->getIsEnable();
@@ -49,7 +47,6 @@ foreach (eqLogic::byType('onewire') as $eqLogic){
 
 	$connect = onewire::test_connexion($mode,$connexion,$ip,$port,$user,$pass,true);
 
-	//$connect['code'] = false;
 	if($connect['code']!==true){
 	        echo '<div class="ui-dialog-title">'.$eqLogic->getHumanName().'</div>';
 			echo '<div style="clear:both">Erreur de connection au '.$connexion.' <br>';
@@ -173,17 +170,3 @@ foreach (eqLogic::byType('onewire') as $eqLogic){
 		}
 	}
 }
-
-
-
-
-
-
-
-//print_r($ow->read("/10.E8C1C9000800/temperature"));
-//print_r($ow->presence("/10.E8C1C9000800"));
-//print_r($ow->set("/10.E8C1C9000800/temphigh",35)); // any value will be converted to string by fwrite function or socket_write
-
-
-
-
