@@ -265,11 +265,12 @@ $deamonRunning = onewire::deamon_info();
 					</fieldset>
 					</form>
             </div>
-
+        </div>
         </div>
             <legend>Commandes</legend>
             <a class="btn btn-success btn-sm cmdAction " data-action="add"><i class="fa fa-plus-circle"></i> {{Commandes}}</a>
             <a class="btn btn-default" id="bt_configureDevice" title="Configurer"><i class="fa fa-wrench"></i></a><br/><br/>
+            <div role="tabpanel" class="tab-pane" id="commandtab">
             <table id="table_cmd" class="table table-bordered table-condensed">
                 <thead>
                 <tr>
@@ -287,6 +288,7 @@ $deamonRunning = onewire::deamon_info();
 
                 </tbody>
             </table>
+            </div>
         <form class="form-horizontal">
             <fieldset>
                 <div class="form-actions">
