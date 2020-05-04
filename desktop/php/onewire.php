@@ -53,8 +53,8 @@ $deamonRunning = onewire::deamon_info();
          <legend><i class="fas fa-cog"></i>{{Gestion}}</legend>
 		<div class="eqLogicThumbnailContainer">
         <!-- test -->
-        <ul class="nav nav-tabs" role="tablist">
-		</ul>	
+<!--        <ul class="nav nav-tabs" role="tablist">
+		</ul> -->	
         <!-- fin test -->
 		    <div class="cursor" id="bt_owfsTable" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 200px;margin-left : 10px;" >
 			    <center>
@@ -135,6 +135,7 @@ $deamonRunning = onewire::deamon_info();
                     class="fa fa-list-alt"></i> {{Commandes}}</a></li>
       </ul>              
         <div class="col-lg-10 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
+        <div role="tabpanel" class="tab-pane active" id="eqlogictab">
         <div class="row">
             <div class="col-sm-6">
                 <form class="form-horizontal">
