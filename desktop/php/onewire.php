@@ -51,10 +51,9 @@ $deamonRunning = onewire::deamon_info();
 	<div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">   
 		<legend><i class="fas fa-cog"></i>{{Gestion}}</legend>
 		<div class="eqLogicThumbnailContainer">
-        <!-- permet de berner plugin.template.js lors de la création du context
+        <!-- permet de berner plugin.template.js lors de la création du context -->
         <ul class="nav nav-tabs" role="tablist">
 		</ul>	
-        -->
 		<div class="cursor" id="bt_owfsTable" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 200px;margin-left : 10px;" >
 			  <center>
 				<i class="fas fa-project-diagram" style="font-size : 5em;color:indigo;"></i>
