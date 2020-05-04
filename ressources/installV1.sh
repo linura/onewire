@@ -43,7 +43,7 @@ echo "**************************************************************************
 echo "*                          START OWFS WITH USB  ADAPTATOR                  *"
 echo "****************************************************************************"
 umount /mnt/1wire
-#sudo /opt/owfs/bin/owfs -u --allow_other /mnt/1wire/
+
 sudo /usr/bin/owfs -u --allow_other /mnt/1wire/
 echo "****************************************************************************"
 echo "*         Make sure OWFS is started automatically at boot                  *"
