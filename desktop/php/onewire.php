@@ -289,6 +289,7 @@ $deamonRunning = onewire::deamon_info();
                 </tbody>
             </table>
             </div>
+    <div role="tabpanel" class="tab-pane" id="commandtab">
         <form class="form-horizontal">
             <fieldset>
                 <div class="form-actions">
@@ -299,6 +300,7 @@ $deamonRunning = onewire::deamon_info();
         </form>
 
         </div>
+    </div>
     </div>
 
 <!-- <SCRIPT LANGUAGE="Javascript"> window.alert(Object.entries(contextmenuitems).length.tostring()); </script> -->
