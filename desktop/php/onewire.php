@@ -269,7 +269,7 @@ $deamonRunning = onewire::deamon_info();
 					</form>
                 </div>
             </div>
-        
+        </div>
         </div>
         
             <legend>Commandes</legend>
