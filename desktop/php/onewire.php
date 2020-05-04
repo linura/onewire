@@ -120,7 +120,20 @@ $deamonRunning = onewire::deamon_info();
     </div>
                 
 <!-- configuration des équipement -->
-                  
+    <!-- Liste des onglets -->
+    <ul class="nav nav-tabs" role="tablist">
+        <!-- Bouton de retour -->
+        <li role="presentation"><a class="eqLogicAction cursor" aria-controls="home" role="tab"
+                                   data-action="returnToThumbnailDisplay"><i class="fa fa-arrow-circle-left"></i></a>
+        </li>
+        <!-- Onglet "Equipement" -->
+        <li role="presentation" class="active"><a href="#eqlogictab" aria-controls="home" role="tab"
+                                                  data-toggle="tab"><i
+                    class="fa fa-tachometer"></i> {{Equipement}}</a></li>
+        <!-- Onglet "Commandes" -->
+        <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i
+                    class="fa fa-list-alt"></i> {{Commandes}}</a></li>
+      </ul>              
         <div class="col-lg-10 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
         <div class="row">
             <div class="col-sm-6">
