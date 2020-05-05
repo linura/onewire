@@ -204,7 +204,7 @@ if ($deamonRunning['state'] != 'ok') {
                             </fieldset>
                         </form>
                     </div>
-                    <div role="tabpanel" class="tab-pane active" id="eqlogictab"> 
+                    <div role="tabpanel" class="tab-pane active" id="eqlogictab">
                         <div class="col-sm-6">
                             <form class="form-horizontal">
                                 <fieldset>
