@@ -55,9 +55,9 @@ if ($deamonRunning['state'] != 'ok') {
             </div>
             <div class="cursor eqLogicAction" data-action="bt_docSpecific" >
 				<center>
-					<i class="fas fa-book" style="font-size: 38px !important;color:#00979C;"></i>
+					<i class="fas fa-book" style="font-size: 38px !important;color:#767676;"></i>
 				</center>
-				<span style="color:#00979C"><center>{{Documentation}}</center></span>
+				<span style="color:#767676"><center>{{Documentation}}</center></span>
 			</div>
         </div>
 
