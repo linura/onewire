@@ -99,7 +99,9 @@ if ($deamonRunning['state'] != 'ok') {
                 <center>
                     <i class="fas fa-plus-circle" style="font-size : 7em;color:green;"></i>
                 </center>
-                <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#BE0104">
+                <!-- TODO -->
+                <!-- <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#BE0104"> -->
+                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#BE0104">
                     <center>Ajouter</center>
                 </span>
             </div>
