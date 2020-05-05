@@ -32,7 +32,7 @@ if ($deamonRunning['state'] != 'ok') {
 <div class="row row-overflow">
 
     <!-- Menu de gauche -->
-<!-- TODO -->
+<!-- TODO laisser pour le moment voir avec utilisateur si besoin -->
  <!--   <div class="col-lg-2 col-md-3 col-sm-4">
         <div class="bs-sidebar">
             <ul id="ul_eqLogic" class="nav nav-list bs-sidenav">
