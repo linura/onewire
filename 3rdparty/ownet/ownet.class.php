@@ -58,8 +58,6 @@ from http://www.linuxjournal.com/article/6788
 $port = config::byKey('wire_port','onewire', '4304');
 $host = config::byKey('wire_host','onewire', '127.0.0.1');
 
-   // print '---'.$port;
-
 define('OWNET_DEFAULT_HOST'	,$host);
 define('OWNET_DEFAULT_PORT'	,$port);
 define('OWNET_LINK_TYPE_SOCKET'	,0);

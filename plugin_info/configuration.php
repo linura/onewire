@@ -10,44 +10,6 @@ if (!isConnect()) {
 <div class="form-group col-md-12">
 <form class="form-horizontal">
     <fieldset>
-<!--           		<div class="form-group col-md-12">-->
-<!--					<label class="col-md-2">Type</label>-->
-<!--					<div class="col-md-3">-->
-<!--						<select id="conf_ontype">-->
-<!--							<option value="">Choisir</option>-->
-<!--							<option value="gpio">GPIO</option>-->
-<!--							<option value="dongle">Dongle</option>-->
-<!--							<option value="i2c">I2C</option>-->
-<!--						</select>-->
-<!--					</div>-->
-<!--                </div>-->
-<!--                <div class="form-group  col-md-12">-->
-<!--					<label class="col-md-2 ">Mini officiel jeedom ?</label>-->
-<!--					<div class="col-md-3">-->
-<!--						<select id="conf_onmini">-->
-<!--							<option value="">Choisir</option>-->
-<!--							<option value="mini">Oui</option>-->
-<!--							<option value="not_mini">Non</option>-->
-<!--						</select>-->
-<!--					</div>-->
-<!--                </div>-->
-<!--                <div class="config" id="conf_gpio">-->
-<!--	                 <div class="config" id="gpio_mini">Executer en ssh (root) :  wget -q -O - http://localhost/plugins/onewire/ressources/gpio/gpio_install.sh | sudo bash</div>-->
-<!--	                  <div class="config" id="gpio_not_mini">Executer en ssh  (root) :  wget -q -O - http://localhost/jeedom/plugins/onewire/ressources/gpio/gpio_install.sh | sudo bash</div>-->
-<!--                </div>-->
-<!--                 <div class="config" id="conf_dongle">-->
-<!--	                  <div class="config" id="dongle_mini">Executer en ssh  (root) :  wget -q -O - http://localhost/plugins/onewire/ressources/dongle/onewire_install.sh | sudo bash</div>-->
-<!--	                   <div class="config" id="dongle_not_mini">Executer en ssh  (root) :  wget -q -O - http://localhost/jeedom/plugins/onewire/ressources/dongle/install.sh | sudo bash </div>-->
-<!--                 </div>-->
-<!--                  <div class="config" id="conf_i2c">-->
-<!--	                   <div class="config" id="i2c_mini">Executer 2 fois en ssh (root) et redemarrer  :  wget -q -O - http://localhost/plugins/onewire/ressources/i2c/i2c_install.sh | sudo bash</div>-->
-<!--	                    <div class="config" id="i2c_not_mini">Executer 2 fois en ssh  (root) et redemarrer  :  wget -q -O - http://localhost/plugins/onewire/ressources/i2c/i2c_install.sh | sudo bash</div>-->
-<!--                  </div>-->
-
-
-
-
-
 		<div class=" alert alert-warning">
 		<i class="fa fa-arrow-right"></i> {{Installer la dependance correspondant à votre installation.}} </div>
 			<fieldset>
@@ -72,7 +34,7 @@ if (!isConnect()) {
 												<a class="btn btn-info bt_installUSB" ><i class="fa fa-play"></i> {{wget -q -O - http://localhost/plugins/onewire/ressources/dongle/usb_install.sh | sudo bash}}</a>
 										</div>
 
-<!--							wget -q -O - http://localhost/plugins/onewire/ressources/dongle/usb_install.sh | sudo bash--></td>
+                            </td>
 						</tr>
 						<tr>
 							<td>
@@ -87,8 +49,6 @@ if (!isConnect()) {
 																<div class="col-lg-5">
 												<a class="btn btn-info bt_installGpio" ><i class="fa fa-play"></i> {{wget -q -O - http://localhost/plugins/onewire/ressources/gpio/gpio_install.sh | sudo bash}}</a>
 										</div>
-<!--							wget -q -O - http://localhost/plugins/onewire/ressources/gpio/gpio_install.sh | sudo bash-->
-
 							</td>
 						</tr>
 						<tr>
@@ -104,7 +64,6 @@ if (!isConnect()) {
 								<div class="col-lg-5">
 										<a class="btn btn-info bt_installI2c" ><i class="fa fa-play"></i> {{wget -q -O - http://localhost/plugins/onewire/ressources/i2c/i2c_install.sh | sudo bash}}</a>
 								</div>
-<!--							wget -q -O - http://localhost/plugins/onewire/ressources/i2c/i2c_install.sh | sudo bash-->
 							</td>
 						</tr>
 					</tbody>

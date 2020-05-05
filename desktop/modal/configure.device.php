@@ -36,7 +36,7 @@ foreach ($class as $c => $cl){
 }
 
 sendVarToJS('configureDeviceId', init('id'));
-//$sameDevices = $eqLogic->getSameDevice();
+
 $sameDevices = array();
 ?>
 <div id='div_configureDeviceAlert' style="display: none;"></div>
@@ -53,14 +53,6 @@ $sameDevices = array();
             <form class="form-horizontal">
                 <fieldset>
                     <input type="hidden" class="onewireParameters form-control" data-l2key="sensor_id" value="<?php echo $cmd->getConfiguration('instanceId')?>"/>
-                <!--    <div class="form-group alert alert-warning">
-                        <label class="col-lg-2 control-label tooltips">{{Oépration}}</label>
-                        <div class="col-lg-6">
-                            <a class="btn btn-success expertModeVisible bt_deviceConfigurationAdministration" data-risk="{{sans risque}}" data-command="InterviewForce" style="color: white;">Forcer re-interview</a>
-                            <a class="btn btn-warning expertModeVisible bt_deviceConfigurationAdministration" data-risk="{{sans risque}}" data-command="markBatteryFailed" style="color: white;">Marquer comme sans batterie</a>
-                            <a class="btn btn-danger expertModeVisible bt_deviceConfigurationAdministration tooltips" data-risk="{{risquée}}" data-command="removeFailed" style="color: white;margin-left: 5px;" title="Vous devez d'abord marquer l'équipement comme sans batterie avant de pouvoir le supprimer">Enlever le module défaillant</a>
-                        </div>
-                    </div>-->
                     <div id="div_configureDeviceParameters">
                         <div class="form-group alert alert-warning">
                             <label class="col-lg-2 control-label tooltips">{{Ecrire paramètre sur }}<?php echo $cmd->getConfiguration('composantName')?></label>
@@ -71,10 +63,6 @@ $sameDevices = array();
                                 ?>
                             </select>
                             </div>
-                           <!-- <label class="col-lg-1 control-label tooltips">{{Taille}}</label>
-                            <div class="col-lg-1">
-                                <input class="zwaveParameters form-control" data-l2key="size" />
-                            </div>-->
                             <label class="col-lg-1 control-label tooltips">{{Valeur}}</label>
                             <div class="col-lg-1">
                                 <input class="onewireParameters form-control" data-l2key="value"/>
@@ -101,7 +89,6 @@ $sameDevices = array();
 
                             </div>
                             <div class="col-lg-3">
-                                <!--<a class="btn btn-success pull-right bt_configureReadParameter" style="color : white;" data-force="0"><i class="fa fa-refresh"></i> {{Rafraichir}}</a>-->
                                 <a class="btn btn-warning pull-right bt_configureReadParameter" style="color : white;" data-force="1"><i class="fa fa-refresh"></i> {{Demander}}</a>
                             </div>
                         </div>
@@ -159,8 +146,6 @@ $sameDevices = array();
             sendParameter(param_id,param_value,sensor_id,eq_id)
         else
             $('#div_configureDeviceAlert').showAlert({message: '{{Erreur les parametres ne sont pas envoyés, merci de remplir tous les champs ou de selectionner un equipement .}}', level: 'danger'});
-
-        //alert(param_id+'----'+param_value);
 
     });
 
@@ -237,30 +222,6 @@ function sendParameter(param,valeur,sensor_id,equ_id){
     });
 
 }
-/*
-    function configureDeviceSave(configurations) {
-        $.ajax({// fonction permettant de faire de l'ajax
-            type: "POST", // methode de transmission des données au fichier php
-            url: "plugins/zwave/core/ajax/zwave.ajax.php", // url du fichier php
-            data: {
-                action: "setDeviceConfiguration",
-                id: configureDeviceId,
-                configurations: json_encode(configurations)
-            },
-            dataType: 'json',
-            error: function(request, status, error) {
-                handleAjaxError(request, status, error, $('#div_configureDeviceAlert'));
-            },
-            success: function(data) { // si l'appel a bien fonctionné
-                if (data.state != 'ok') {
-                    $('#div_configureDeviceAlert').showAlert({message: data.result, level: 'danger'});
-                    return;
-                }
-                $('#div_configureDeviceAlert').showAlert({message: '{{Parrametres envoyés avec succes (la prise en compte peut prendre jusqu\'à plusieurs minutes)}}', level: 'success'});
-                configureDeviceLoad(1);
-            }
-        });
-    }*/
 </script>
 
 
