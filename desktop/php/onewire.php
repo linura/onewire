@@ -56,13 +56,12 @@ if ($deamonRunning['state'] != 'ok') {
                 </span>
             </div>
 
-            <div class="cursor" id="bt_stop_owfs" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
+ <!--           <div class="cursor" id="bt_stop_owfs" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;"> -->
+            <div class="cursor eqLogicAction" data-action="bt_stop_owfs" >    
                 <center>
-                    <i class="fas fa-stop-circle" style="font-size: 38px;color:red;"></i>
+                    <i class="fas fa-stop-circle" style="font-size: 38px !important;color:#00979C;"></i>
                 </center>
-                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
-                    <center>{{Arreter OWFS}}</center>
-                </span>
+                <span style="color:#00979C"><center>{{Arreter OWFS}}</center></span>
             </div>
             <div class="cursor eqLogicAction" data-action="bt_docSpecific" >
 				<center>
