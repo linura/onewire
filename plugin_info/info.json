@@ -1,7 +1,7 @@
 {
 	"id" : "onewire",
     "name" : "1Wire",
-    "description" : "Plugin permettant de gérer le Bus 1wire, repris par LEBANSAIS Christophe",
+    "description" : "Plugin permettant de gérer le Bus 1wire, repris par LEBANSAIS Christophe le 03/05/2020",
 	"licence" : "AGPL",
 	"author" : "Hurier Mickael",
     "require" : "3.2",
@@ -13,5 +13,6 @@
 	"changelog" : "https://github.com/linura/onewire/blob/master/changelog",
 	"documentation" : "https://jeedom.github.io/plugin-template/#language#/",
 	"language" : ["fr_FR"],
-	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"]
+	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"],
+	"icon" : "fa fa-caret-square-o-right"
 }
