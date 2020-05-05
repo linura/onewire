@@ -302,14 +302,15 @@ if ($deamonRunning['state'] != 'ok') {
                             </tbody>
                         </table>
                     </div>
-                    <form class="form-horizontal">
+<!-- TODO -->
+ <!--                   <form class="form-horizontal">
                         <fieldset>
                             <div class="form-actions">
                                 <a class="btn btn-danger eqLogicAction" data-action="remove"><i class="fa fa-minus-circle"></i> {{Supprimer}}</a>
                                 <a class="btn btn-success eqLogicAction" data-action="save"><i class="fa fa-check-circle"></i> {{Sauvegarder}}</a>
                             </div>
                         </fieldset>
-                    </form>
+                    </form> -->
 
                 </div>
             </div>
