@@ -36,27 +36,18 @@ if ($deamonRunning['state'] != 'ok') {
     <div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">
         <legend><i class="fas fa-cog"></i>{{Gestion}}</legend>
         <div class="eqLogicThumbnailContainer">
-
-            <div class="cursor" id="bt_owfsTable" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 200px;margin-left : 10px;">
+            <div class="cursor" id="bt_owfsTable">
                 <center>
-                    <i class="fas fa-project-diagram" style="font-size : 5em;color:indigo;"></i>
+                    <i class="fas fa-project-diagram" style="font-size: 38px !important;color:#00979C;"></i>
                 </center>
-                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
-                    <center>{{Afficher les composants du bus}}</center>
-                </span>
+                <span style="color:#00979C"><center>{{Afficher les composants du bus}}</center></span>
             </div>
-
-
-            <div class="cursor" id="bt_reload_owfs" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
+            <div class="cursor" id="bt_reload_owfs">
                 <center>
-                    <i class="fa fa-refresh fa-spin" style="font-size : 5em;color:#767676;"></i>
+                    <i class="fa fa-refresh fa-spin" style="font-size: 38px !important;color:#00979C;"></i>
                 </center>
-                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
-                    <center>{{Relancer OWFS}}</center>
-                </span>
+                <span style="color:#00979C"><center>{{Relancer OWFS}}</center></span>
             </div>
-
- <!--           <div class="cursor" id="bt_stop_owfs" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;"> -->
             <div class="cursor" id="bt_stop_owfs" >    
                 <center>
                     <i class="fas fa-stop-circle" style="font-size: 38px !important;color:#00979C;"></i>
