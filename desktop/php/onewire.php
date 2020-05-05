@@ -32,8 +32,8 @@ if ($deamonRunning['state'] != 'ok') {
 <div class="row row-overflow">
 
     <!-- Menu de gauche -->
-<!-- TODO laisser pour le moment voir avec utilisateur si besoin -->
- <!--   <div class="col-lg-2 col-md-3 col-sm-4">
+    <!-- TODO laisser pour le moment voir avec utilisateur si besoin -->
+    <!--   <div class="col-lg-2 col-md-3 col-sm-4">
         <div class="bs-sidebar">
             <ul id="ul_eqLogic" class="nav nav-list bs-sidenav">
                 <a class="btn btn-default eqLogicAction" style="width : 100%;margin-top : 5px;margin-bottom: 5px;" data-action="add"><i class="fa fa-plus-circle"></i> {{Ajouter}}</a>
@@ -129,16 +129,16 @@ if ($deamonRunning['state'] != 'ok') {
     <!-- Container du panneau de contrôle -->
     <!-- Liste des onglets -->0
     <div class="col-lg-10 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
-    <!-- Bouton sauvegarder -->
-    <a class="btn btn-success eqLogicAction pull-right" data-action="save"><i class="fa fa-check-circle"></i>
-        {{Sauvegarder}}</a>
-      <!-- Bouton Supprimer -->
-      <a class="btn btn-danger eqLogicAction pull-right" data-action="remove"><i class="fa fa-minus-circle"></i>
-        {{Supprimer}}</a>
-      <!-- Bouton configuration avancée -->
-      <a class="btn btn-default eqLogicAction pull-right" data-action="configure"><i class="fa fa-cogs"></i>
-        {{Configuration avancée}}</a>
-        
+        <!-- Bouton sauvegarder -->
+        <a class="btn btn-success eqLogicAction pull-right" data-action="save"><i class="fa fa-check-circle"></i>
+            {{Sauvegarder}}</a>
+        <!-- Bouton Supprimer -->
+        <a class="btn btn-danger eqLogicAction pull-right" data-action="remove"><i class="fa fa-minus-circle"></i>
+            {{Supprimer}}</a>
+        <!-- Bouton configuration avancée -->
+        <a class="btn btn-default eqLogicAction pull-right" data-action="configure"><i class="fa fa-cogs"></i>
+            {{Configuration avancée}}</a>
+
         <ul class="nav nav-tabs" role="tablist">
             <!-- Bouton de retour -->
             <li role="presentation"><a class="eqLogicAction cursor" aria-controls="home" role="tab" data-action="returnToThumbnailDisplay"><i class="fa fa-arrow-circle-left"></i></a>
@@ -149,73 +149,73 @@ if ($deamonRunning['state'] != 'ok') {
             <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Commandes}}</a></li>
         </ul>
         <!-- Container du contenu des onglets -->
-      <div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
-        <!-- Panneau de modification de l objet -->
-        <div role="tabpanel" class="tab-pane active" id="eqlogictab">
-            <div class="row">
- <!--               <div class="tab-content" style="height:calc(100%);overflow:auto;overflow-x: hidden;">
+        <div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
+            <!-- Panneau de modification de l objet -->
+            <div role="tabpanel" class="tab-pane active" id="eqlogictab">
+                <div class="row">
+                    <!--               <div class="tab-content" style="height:calc(100%);overflow:auto;overflow-x: hidden;">
                     <div role="tabpanel" class="tab-pane active" id="eqlogictab"> -->
-                        <br />
-                        <form class="form-horizontal">
-                            <fieldset>
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label">{{Nom de l équipement}}</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
-                                        <input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement}}" />
-                                    </div>
+                    <br />
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">{{Nom de l équipement}}</label>
+                                <div class="col-lg-4">
+                                    <input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
+                                    <input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement}}" />
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label">{{Objet parent}}</label>
-                                    <div class="col-lg-4">
-                                        <select class="eqLogicAttr form-control" data-l1key="object_id">
-                                            <option value="">{{Aucun}}</option>
-                                            <?php
-                                            foreach (jeeObject::all() as $object) {
-                                                echo '<option value="' . $object->getId() . '">' . $object->getName() . '</option>';
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label">{{Catégorie}}</label>
-                                    <div class="col-lg-3">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">{{Objet parent}}</label>
+                                <div class="col-lg-4">
+                                    <select class="eqLogicAttr form-control" data-l1key="object_id">
+                                        <option value="">{{Aucun}}</option>
                                         <?php
-                                        $i = 0;
-                                        foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
-                                            echo '{{' . $value['name'] . '}}: <input type="checkbox" class="eqLogicAttr" data-label-text="{{' . $value['name'] . '}}"  data-l1key="category" data-l2key="' . $key . '" /><br>';
+                                        foreach (jeeObject::all() as $object) {
+                                            echo '<option value="' . $object->getId() . '">' . $object->getName() . '</option>';
                                         }
                                         ?>
-                                    </div>
+                                    </select>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label"></label>
-                                    <div class="col-lg-5">
-                                        Activer: <input type="checkbox" class=" eqLogicAttr" data-label-text="{{Activer}}" data-l1key="isEnable" checked />
-                                        Visible: <input type="checkbox" class=" eqLogicAttr" data-label-text="{{visible}}" data-l1key="isVisible" checked />
-                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">{{Catégorie}}</label>
+                                <div class="col-lg-3">
+                                    <?php
+                                    $i = 0;
+                                    foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
+                                        echo '{{' . $value['name'] . '}}: <input type="checkbox" class="eqLogicAttr" data-label-text="{{' . $value['name'] . '}}"  data-l1key="category" data-l2key="' . $key . '" /><br>';
+                                    }
+                                    ?>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"></label>
+                                <div class="col-lg-5">
+                                    Activer: <input type="checkbox" class=" eqLogicAttr" data-label-text="{{Activer}}" data-l1key="isEnable" checked />
+                                    Visible: <input type="checkbox" class=" eqLogicAttr" data-label-text="{{visible}}" data-l1key="isVisible" checked />
+                                </div>
+                            </div>
 
-                                <div class="form-group ">
-                                    <label class="col-lg-3 control-label">{{Auto-actualisation (cron)}}</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="autorefresh" placeholder="{{Auto-actualisation (cron)}}" />
-                                    </div>
-                                    <div class="col-lg-1">
-                                        <i class="fa fa-question-circle cursor bt_pageHelp floatright" data-name="cronSyntaxe"></i>
-                                    </div>
+                            <div class="form-group ">
+                                <label class="col-lg-3 control-label">{{Auto-actualisation (cron)}}</label>
+                                <div class="col-lg-4">
+                                    <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="autorefresh" placeholder="{{Auto-actualisation (cron)}}" />
                                 </div>
+                                <div class="col-lg-1">
+                                    <i class="fa fa-question-circle cursor bt_pageHelp floatright" data-name="cronSyntaxe"></i>
+                                </div>
+                            </div>
 
-                                <div class="form-group ">
-                                    <label class="col-lg-3 control-label">{{Node ID}}</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" class="eqLogicAttr form-control" data-l1key="logicalId" />
-                                    </div>
+                            <div class="form-group ">
+                                <label class="col-lg-3 control-label">{{Node ID}}</label>
+                                <div class="col-lg-4">
+                                    <input type="text" class="eqLogicAttr form-control" data-l1key="logicalId" />
                                 </div>
-                            </fieldset>
-                        </form>
-                    </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <!--                    </div>  -->
                     <div role="tabpanel" class="tab-pane active" id="eqlogictab">
                         <div class="col-sm-6">
                             <form class="form-horizontal">
@@ -304,8 +304,8 @@ if ($deamonRunning['state'] != 'ok') {
                             </tbody>
                         </table>
                     </div>
-<!-- TODO -->
- <!--                   <form class="form-horizontal">
+                    <!-- TODO -->
+                    <!--                   <form class="form-horizontal">
                         <fieldset>
                             <div class="form-actions">
                                 <a class="btn btn-danger eqLogicAction" data-action="remove"><i class="fa fa-minus-circle"></i> {{Supprimer}}</a>
