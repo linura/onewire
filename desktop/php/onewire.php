@@ -216,7 +216,7 @@ if ($deamonRunning['state'] != 'ok') {
                         </fieldset>
                     </form>
                     <!--                    </div>  -->
-                    <div role="tabpanel" class="tab-pane active" id="eqlogictab">
+                    <!-- <div role="tabpanel" class="tab-pane active" id="eqlogictab"> -->
                         <div class="col-sm-6">
                             <form class="form-horizontal">
                                 <fieldset>
@@ -282,7 +282,7 @@ if ($deamonRunning['state'] != 'ok') {
                                 </fieldset>
                             </form>
                         </div>
-                    </div>
+ <!--                   </div> -->
                     <div role="tabpanel" class="tab-pane" id="commandtab">
                         <a class="btn btn-success btn-sm cmdAction " data-action="add"><i class="fa fa-plus-circle"></i> {{Commandes}}</a>
                         <a class="btn btn-default" id="bt_configureDevice" title="Configurer"><i class="fa fa-wrench"></i></a><br /><br />
