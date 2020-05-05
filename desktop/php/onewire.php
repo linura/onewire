@@ -57,7 +57,7 @@ if ($deamonRunning['state'] != 'ok') {
             </div>
 
  <!--           <div class="cursor" id="bt_stop_owfs" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;"> -->
-            <div class="cursor eqLogicAction" data-action="bt_stop_owfs" >    
+            <div class="cursor" id="bt_stop_owfs" >    
                 <center>
                     <i class="fas fa-stop-circle" style="font-size: 38px !important;color:#00979C;"></i>
                 </center>
