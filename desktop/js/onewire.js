@@ -22,7 +22,7 @@ jQuery(document).ready(function () {
 });
 
 $('.eqLogicAction[data-action=bt_docSpecific]').on('click', function () {
-    window.open('https://bebel27a.github.io/jeedom-mymobdus.github.io/fr_FR/');
+    window.open('hhttps://linura.github.io/onewire/fr_FR/');
 });
 
 function view_mode(mode) {
