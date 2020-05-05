@@ -28,7 +28,7 @@ if ($deamonRunning['state'] != 'ok') {
 ?>
 <!-- script pour les icons perso -->
 <script src="https://kit.fontawesome.com/4f90f8faf4.js" crossorigin="anonymous"></script>
-
+<!-- Container global (Ligne bootstrap) -->
 <div class="row row-overflow">
 
     <!-- Menu de gauche -->
@@ -48,7 +48,7 @@ if ($deamonRunning['state'] != 'ok') {
     </div> -->
 
     <!-- Menu gestion -->
-
+    <!-- Container des listes de commandes / éléments -->
     <div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">
         <legend><i class="fas fa-cog"></i>{{Gestion}}</legend>
         <div class="eqLogicThumbnailContainer">
@@ -92,7 +92,7 @@ if ($deamonRunning['state'] != 'ok') {
         </div>
 
         <!-- Menu mes equipements -->
-
+        <!-- Début de la liste des objets -->
         <legend><br><br><br><i class="fas fa-table"></i>{{Mes équipements}}</legend>
         <div class="eqLogicThumbnailContainer">
             <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
@@ -126,8 +126,8 @@ if ($deamonRunning['state'] != 'ok') {
         </div>
     </div>
 
-    <!-- configuration des équipement -->
-    <!-- Liste des onglets -->
+    <!-- Container du panneau de contrôle -->
+    <!-- Liste des onglets -->0
     <div class="col-lg-10 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
     <!-- Bouton sauvegarder -->
     <a class="btn btn-success eqLogicAction pull-right" data-action="save"><i class="fa fa-check-circle"></i>
@@ -148,11 +148,13 @@ if ($deamonRunning['state'] != 'ok') {
             <!-- Onglet "Commandes" -->
             <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Commandes}}</a></li>
         </ul>
-
+        <!-- Container du contenu des onglets -->
+      <div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
+        <!-- Panneau de modification de l objet -->
         <div role="tabpanel" class="tab-pane active" id="eqlogictab">
             <div class="row">
-                <div class="tab-content" style="height:calc(100%);overflow:auto;overflow-x: hidden;">
-                    <div role="tabpanel" class="tab-pane active" id="eqlogictab">
+ <!--               <div class="tab-content" style="height:calc(100%);overflow:auto;overflow-x: hidden;">
+                    <div role="tabpanel" class="tab-pane active" id="eqlogictab"> -->
                         <br />
                         <form class="form-horizontal">
                             <fieldset>
