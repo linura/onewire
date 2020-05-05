@@ -6,7 +6,7 @@ if (!isConnect('admin')) {
 $plugin = plugin::byId('onewire');
 
 $plugin_email = ((int) config::byKey('active', 'mail') > 0 ? true : false);
-$listemail = array();E
+$listemail = array();
 
 if ($plugin_email) {
     foreach (eqLogic::byType('mail') as $eqLogic) {
@@ -303,9 +303,10 @@ if ($deamonRunning['state'] != 'ok') {
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<!-- <SCRIPT LANGUAGE="Javascript"> window.alert(Object.entries(contextmenuitems).length.tostring()); </script> -->
 
-        <!-- <SCRIPT LANGUAGE="Javascript"> window.alert(Object.entries(contextmenuitems).length.tostring()); </script> -->
-
-        <?php include_file('desktop', 'onewire', 'js', 'onewire'); ?>
-        <?php include_file('core', 'plugin.template', 'js'); ?>
-        <!-- <?php include_file('desktop', 'plugin.template.dev', 'js', 'onewire'); ?> -->
+<?php include_file('desktop', 'onewire', 'js', 'onewire'); ?>
+<?php include_file('core', 'plugin.template', 'js'); ?>
+<!-- <?php include_file('desktop', 'plugin.template.dev', 'js', 'onewire'); ?> -->
