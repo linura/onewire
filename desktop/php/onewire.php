@@ -31,22 +31,6 @@ if ($deamonRunning['state'] != 'ok') {
 <!-- Container global (Ligne bootstrap) -->
 <div class="row row-overflow">
 
-    <!-- Menu de gauche -->
-    <!-- TODO laisser pour le moment voir avec utilisateur si besoin -->
-    <!--   <div class="col-lg-2 col-md-3 col-sm-4">
-        <div class="bs-sidebar">
-            <ul id="ul_eqLogic" class="nav nav-list bs-sidenav">
-                <a class="btn btn-default eqLogicAction" style="width : 100%;margin-top : 5px;margin-bottom: 5px;" data-action="add"><i class="fa fa-plus-circle"></i> {{Ajouter}}</a>
-                <li class="filter" style="margin-bottom: 5px;"><input class="filter form-control input-sm" placeholder="{{Rechercher}}" style="width: 100%" /></li>
-                <?php
-                //foreach ($eqLogics as $eqLogic) {
-                //    echo '<li class="cursor li_eqLogic" data-eqLogic_id="' . $eqLogic->getId() . '"><a>' . $eqLogic->getHumanName(true) . '</a></li>';
-                //}
-                ?>
-            </ul>
-        </div>
-    </div> -->
-
     <!-- Menu gestion -->
     <!-- Container des listes de commandes / éléments -->
     <div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">
@@ -99,8 +83,6 @@ if ($deamonRunning['state'] != 'ok') {
                 <center>
                     <i class="fas fa-plus-circle" style="font-size : 7em;color:green;"></i>
                 </center>
-                <!-- TODO -->
-                <!-- <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#BE0104"> -->
                 <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#BE0104">
                     <center>Ajouter</center>
                 </span>
@@ -153,8 +135,6 @@ if ($deamonRunning['state'] != 'ok') {
             <!-- Panneau de modification de l objet -->
             <div role="tabpanel" class="tab-pane active" id="eqlogictab">
                 <div class="row">
-                    <!--               <div class="tab-content" style="height:calc(100%);overflow:auto;overflow-x: hidden;">
-                    <div role="tabpanel" class="tab-pane active" id="eqlogictab"> -->
                     <br />
                     <form class="form-horizontal">
                         <fieldset>
@@ -214,11 +194,7 @@ if ($deamonRunning['state'] != 'ok') {
                                 </div>
                             </div>
                         </fieldset>
-<!--                    </form> -->
-                    <!--                    </div>  -->
-                    <!-- <div role="tabpanel" class="tab-pane active" id="eqlogictab"> -->
-<!--                    <div class="col-sm-6">
-                        <form class="form-horizontal"> -->
+
                             <fieldset>
                                 <legend>{{Paramatrage}} </legend>
                                 <div class="form-group">
@@ -281,7 +257,6 @@ if ($deamonRunning['state'] != 'ok') {
                                 </div>
                             </fieldset>
                         </form>
-<!--                    </div>  -->
                 </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="commandtab">
@@ -305,24 +280,9 @@ if ($deamonRunning['state'] != 'ok') {
                     </tbody>
                 </table>
             </div>
-            <!-- TODO -->
-            <!--                   <form class="form-horizontal">
-                        <fieldset>
-                            <div class="form-actions">
-                                <a class="btn btn-danger eqLogicAction" data-action="remove"><i class="fa fa-minus-circle"></i> {{Supprimer}}</a>
-                                <a class="btn btn-success eqLogicAction" data-action="save"><i class="fa fa-check-circle"></i> {{Sauvegarder}}</a>
-                            </div>
-                        </fieldset>
-                    </form> -->
         </div>
     </div>
 </div>
-<!-- TODO a supprimer en master -->
-<!-- <SCRIPT LANGUAGE="Javascript"> window.alert(Object.entries(contextmenuitems).length.tostring()); </script> -->
 
 <?php include_file('desktop', 'onewire', 'js', 'onewire'); ?>
 <?php include_file('core', 'plugin.template', 'js'); ?>
-<!-- <?php include_file('desktop', 'plugin.template.dev', 'js', 'onewire'); ?> -->
-
-<!-- TODO : asupprimer en master -->
-<!-- Ajout de deux div en ligne 306-307 pour fermer div class row et liste de onglet -->
