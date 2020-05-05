@@ -93,7 +93,7 @@ if ($deamonRunning['state'] != 'ok') {
 
         <!-- Menu mes equipements -->
 
-        <legend><br><i class="fas fa-table"></i>{{Mes équipements}}</legend>
+        <legend><br><br><br><i class="fas fa-table"></i>{{Mes équipements}}</legend>
         <div class="eqLogicThumbnailContainer">
             <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
                 <center>
@@ -270,7 +270,6 @@ if ($deamonRunning['state'] != 'ok') {
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="commandtab">
-                        <legend>Commandes</legend>
                         <a class="btn btn-success btn-sm cmdAction " data-action="add"><i class="fa fa-plus-circle"></i> {{Commandes}}</a>
                         <a class="btn btn-default" id="bt_configureDevice" title="Configurer"><i class="fa fa-wrench"></i></a><br /><br />
                         <table id="table_cmd" class="table table-bordered  table-condensed">
