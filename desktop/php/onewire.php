@@ -63,7 +63,7 @@ if ($deamonRunning['state'] != 'ok') {
 
         <!-- Menu mes equipements -->
         <!-- Début de la liste des objets -->
-        <legend><br><br><br><i class="fas fa-table"></i>{{Mes équipements}}</legend>
+        <legend><i class="fas fa-table"></i>{{Mes équipements}}</legend>
         <div class="eqLogicThumbnailContainer">
             <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
                 <center>
