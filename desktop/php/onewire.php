@@ -95,7 +95,7 @@ if ($deamonRunning['state'] != 'ok') {
 
         <legend><br><br><br><i class="fas fa-table"></i>{{Mes équipements}}</legend>
         <div class="eqLogicThumbnailContainer">
-            <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
+            <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
                 <center>
                     <i class="fas fa-plus-circle" style="font-size : 7em;color:green;"></i>
                 </center>
@@ -138,7 +138,7 @@ if ($deamonRunning['state'] != 'ok') {
             <!-- Onglet "Commandes" -->
             <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Commandes}}</a></li>
         </ul>
-
+        </div>
         <div role="tabpanel" class="tab-pane active" id="eqlogictab">
             <div class="row">
                 <div class="tab-content" style="height:calc(100%);overflow:auto;overflow-x: hidden;">
@@ -304,7 +304,7 @@ if ($deamonRunning['state'] != 'ok') {
                 </div>
             </div>
         </div>
-    </div>
+    
 </div>
 <!-- TODO a supprimer en master -->
 <!-- <SCRIPT LANGUAGE="Javascript"> window.alert(Object.entries(contextmenuitems).length.tostring()); </script> -->
