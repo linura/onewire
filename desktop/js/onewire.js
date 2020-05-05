@@ -22,7 +22,7 @@ jQuery(document).ready(function () {
 });
 
 $('.eqLogicAction[data-action=bt_docSpecific]').on('click', function () {
-    window.open('https://linura.github.io/onewire/fr_FR/');
+    window.open('https://linura.github.io/onewire/docs/fr_FR/');
 });
 
 function view_mode(mode) {
