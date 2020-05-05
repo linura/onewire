@@ -214,11 +214,11 @@ if ($deamonRunning['state'] != 'ok') {
                                 </div>
                             </div>
                         </fieldset>
-                    </form>
+<!--                    </form> -->
                     <!--                    </div>  -->
                     <!-- <div role="tabpanel" class="tab-pane active" id="eqlogictab"> -->
-                    <div class="col-sm-6">
-                        <form class="form-horizontal">
+<!--                    <div class="col-sm-6">
+                        <form class="form-horizontal"> -->
                             <fieldset>
                                 <legend>{{Paramatrage}} </legend>
                                 <div class="form-group">
@@ -281,7 +281,7 @@ if ($deamonRunning['state'] != 'ok') {
                                 </div>
                             </fieldset>
                         </form>
-                    </div>
+<!--                    </div>  -->
                 </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="commandtab">
