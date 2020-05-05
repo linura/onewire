@@ -30,7 +30,6 @@ if ($deamonRunning['state'] != 'ok') {
 <script src="https://kit.fontawesome.com/4f90f8faf4.js" crossorigin="anonymous"></script>
 <!-- Container global (Ligne bootstrap) -->
 <div class="row row-overflow">
-
     <!-- Menu gestion -->
     <!-- Container des listes de commandes / éléments -->
     <div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">
