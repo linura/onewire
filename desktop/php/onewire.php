@@ -30,54 +30,40 @@ if ($deamonRunning['state'] != 'ok') {
 <script src="https://kit.fontawesome.com/4f90f8faf4.js" crossorigin="anonymous"></script>
 <!-- Container global (Ligne bootstrap) -->
 <div class="row row-overflow">
-
     <!-- Menu gestion -->
     <!-- Container des listes de commandes / éléments -->
     <div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">
         <legend><i class="fas fa-cog"></i>{{Gestion}}</legend>
         <div class="eqLogicThumbnailContainer">
-
-            <div class="cursor" id="bt_owfsTable" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 200px;margin-left : 10px;">
+            <div class="cursor" id="bt_owfsTable">
                 <center>
-                    <i class="fas fa-project-diagram" style="font-size : 5em;color:indigo;"></i>
+                    <i class="fas fa-project-diagram" style="font-size: 38px !important;color:indigo;"></i>
                 </center>
-                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
-                    <center>{{Afficher les composants du bus}}</center>
-                </span>
+                <span style="color:#767676"><center>{{Afficher les composants du bus}}</center></span>
             </div>
-
-
-            <div class="cursor" id="bt_reload_owfs" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
+            <div class="cursor" id="bt_reload_owfs">
                 <center>
-                    <i class="fa fa-refresh fa-spin" style="font-size : 5em;color:#767676;"></i>
+                    <i class="fa fa-refresh fa-spin" style="font-size: 38px !important;color:#767676;"></i>
                 </center>
-                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
-                    <center>{{Relancer OWFS}}</center>
-                </span>
+                <span style="color:#767676"><center>{{Relancer OWFS}}</center></span>
             </div>
-
-            <div class="cursor" id="bt_stop_owfs" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
+            <div class="cursor" id="bt_stop_owfs" >    
                 <center>
-                    <i class="fas fa-stop-circle" style="font-size : 5em;color:red;"></i>
+                    <i class="fas fa-stop-circle" style="font-size: 38px !important;color:red;"></i>
                 </center>
-                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
-                    <center>{{Arreter OWFS}}</center>
-                </span>
+                <span style="color:#767676"><center>{{Arreter OWFS}}</center></span>
             </div>
-
-            <div class="cursor" id="bt_docSpecific" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
-                <center>
-                    <i class="fas fa-book" style="font-size : 5em;color:#767676;"></i>
-                </center>
-                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
-                    <center>{{Documentation}}</center>
-                </span>
-            </div>
+            <div class="cursor eqLogicAction" data-action="bt_docSpecific" >
+				<center>
+					<i class="fas fa-book" style="font-size: 38px !important;color:#00979C;"></i>
+				</center>
+				<span style="color:#00979C"><center>{{Documentation}}</center></span>
+			</div>
         </div>
 
         <!-- Menu mes equipements -->
         <!-- Début de la liste des objets -->
-        <legend><br><br><br><i class="fas fa-table"></i>{{Mes équipements}}</legend>
+        <legend><i class="fas fa-table"></i>{{Mes équipements}}</legend>
         <div class="eqLogicThumbnailContainer">
             <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
                 <center>

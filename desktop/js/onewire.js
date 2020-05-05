@@ -21,6 +21,9 @@ jQuery(document).ready(function () {
     view_connexion($('.eqLogicAttr[data-l2key=onewire_connexion]').val());
 });
 
+$('.eqLogicAction[data-action=bt_docSpecific]').on('click', function () {
+    window.open('https://linura.github.io/onewire/docs/fr_FR/');
+});
 
 function view_mode(mode) {
     if (mode == 'owfs') {
