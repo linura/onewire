@@ -60,7 +60,6 @@ if ($deamonRunning['state'] != 'ok') {
 				<span style="color:#00979C"><center>{{Documentation}}</center></span>
 			</div>
         </div>
-
         <!-- Menu mes equipements -->
         <!-- Début de la liste des objets -->
         <legend><i class="fas fa-table"></i>{{Mes équipements}}</legend>
