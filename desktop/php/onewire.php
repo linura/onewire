@@ -39,7 +39,7 @@ if ($deamonRunning['state'] != 'ok') {
                 <center>
                     <i class="fas fa-project-diagram" style="font-size: 38px !important;color:indigo;"></i>
                 </center>
-                <span style="color:indigo"><center>{{Afficher les composants du bus}}</center></span>
+                <span style="color:#767676"><center>{{Afficher les composants du bus}}</center></span>
             </div>
             <div class="cursor" id="bt_reload_owfs">
                 <center>
@@ -49,7 +49,7 @@ if ($deamonRunning['state'] != 'ok') {
             </div>
             <div class="cursor" id="bt_stop_owfs" >    
                 <center>
-                    <i class="fas fa-stop-circle" style="font-size: 38px !important;color:#767676;"></i>
+                    <i class="fas fa-stop-circle" style="font-size: 38px !important;color:red;"></i>
                 </center>
                 <span style="color:#767676"><center>{{Arreter OWFS}}</center></span>
             </div>
