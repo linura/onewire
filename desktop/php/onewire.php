@@ -53,7 +53,7 @@ if ($deamonRunning['state'] != 'ok') {
         <legend><i class="fas fa-cog"></i>{{Gestion}}</legend>
         <div class="eqLogicThumbnailContainer">
 
-            <div class="cursor" id="bt_owfsTable" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 200px;margin-left : 10px;">
+            <div class="cursor" id="bt_owfsTable" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 200px;margin-left : 10px;">
                 <center>
                     <i class="fas fa-project-diagram" style="font-size : 5em;color:indigo;"></i>
                 </center>
@@ -63,7 +63,7 @@ if ($deamonRunning['state'] != 'ok') {
             </div>
 
 
-            <div class="cursor" id="bt_reload_owfs" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
+            <div class="cursor" id="bt_reload_owfs" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
                 <center>
                     <i class="fa fa-refresh fa-spin" style="font-size : 5em;color:#767676;"></i>
                 </center>
@@ -72,7 +72,7 @@ if ($deamonRunning['state'] != 'ok') {
                 </span>
             </div>
 
-            <div class="cursor" id="bt_stop_owfs" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
+            <div class="cursor" id="bt_stop_owfs" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
                 <center>
                     <i class="fas fa-stop-circle" style="font-size : 5em;color:red;"></i>
                 </center>
@@ -81,7 +81,7 @@ if ($deamonRunning['state'] != 'ok') {
                 </span>
             </div>
 
-            <div class="cursor" id="bt_docSpecific" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
+            <div class="cursor" id="bt_docSpecific" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
                 <center>
                     <i class="fas fa-book" style="font-size : 5em;color:#767676;"></i>
                 </center>
@@ -95,7 +95,7 @@ if ($deamonRunning['state'] != 'ok') {
 
         <legend><br><br><br><i class="fas fa-table"></i>{{Mes équipements}}</legend>
         <div class="eqLogicThumbnailContainer">
-            <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
+            <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 130px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
                 <center>
                     <i class="fas fa-plus-circle" style="font-size : 7em;color:green;"></i>
                 </center>
