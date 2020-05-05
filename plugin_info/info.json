@@ -11,7 +11,7 @@
 	"hasOwnDeamon" : true,
 	"maxDependancyInstallTime" : 45,
 	"changelog" : "https://github.com/linura/onewire/blob/master/changelog",
-	"documentation" : "https://jeedom.github.io/plugin-template/#language#/",
+	"documentation" : "https://linura.github.io/onewire/",
 	"language" : ["fr_FR"],
 	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"],
 	"icon" : "fa fa-caret-square-o-right"
