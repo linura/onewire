@@ -129,6 +129,16 @@ if ($deamonRunning['state'] != 'ok') {
     <!-- configuration des équipement -->
     <!-- Liste des onglets -->
     <div class="col-lg-10 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
+    <!-- Bouton sauvegarder -->
+    <a class="btn btn-success eqLogicAction pull-right" data-action="save"><i class="fa fa-check-circle"></i>
+        {{Sauvegarder}}</a>
+      <!-- Bouton Supprimer -->
+      <a class="btn btn-danger eqLogicAction pull-right" data-action="remove"><i class="fa fa-minus-circle"></i>
+        {{Supprimer}}</a>
+      <!-- Bouton configuration avancée -->
+      <a class="btn btn-default eqLogicAction pull-right" data-action="configure"><i class="fa fa-cogs"></i>
+        {{Configuration avancée}}</a>
+        
         <ul class="nav nav-tabs" role="tablist">
             <!-- Bouton de retour -->
             <li role="presentation"><a class="eqLogicAction cursor" aria-controls="home" role="tab" data-action="returnToThumbnailDisplay"><i class="fa fa-arrow-circle-left"></i></a>
