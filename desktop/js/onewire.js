@@ -131,7 +131,7 @@ $('#bt_configureDevice').on('click', function() {
 });
 
 
-/*A la selectyion d un composant*/
+/*A la selection d un composant*/
 function SelectComposantName(cmd_id){
 
     var my_cmd = '';
