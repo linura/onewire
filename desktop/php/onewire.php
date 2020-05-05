@@ -138,173 +138,173 @@ if ($deamonRunning['state'] != 'ok') {
             <!-- Onglet "Commandes" -->
             <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Commandes}}</a></li>
         </ul>
-    </div>
-    <div role="tabpanel" class="tab-pane active" id="eqlogictab">
-        <div class="row">
-            <div class="tab-content" style="height:calc(100%);overflow:auto;overflow-x: hidden;">
-                <div role="tabpanel" class="tab-pane active" id="eqlogictab">
-                    <br />
-                    <form class="form-horizontal">
-                        <fieldset>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">{{Nom de l équipement}}</label>
-                                <div class="col-lg-4">
-                                    <input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
-                                    <input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement}}" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">{{Objet parent}}</label>
-                                <div class="col-lg-4">
-                                    <select class="eqLogicAttr form-control" data-l1key="object_id">
-                                        <option value="">{{Aucun}}</option>
-                                        <?php
-                                        foreach (jeeObject::all() as $object) {
-                                            echo '<option value="' . $object->getId() . '">' . $object->getName() . '</option>';
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">{{Catégorie}}</label>
-                                <div class="col-lg-3">
-                                    <?php
-                                    $i = 0;
-                                    foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
-                                        echo '{{' . $value['name'] . '}}: <input type="checkbox" class="eqLogicAttr" data-label-text="{{' . $value['name'] . '}}"  data-l1key="category" data-l2key="' . $key . '" /><br>';
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label"></label>
-                                <div class="col-lg-5">
-                                    Activer: <input type="checkbox" class=" eqLogicAttr" data-label-text="{{Activer}}" data-l1key="isEnable" checked />
-                                    Visible: <input type="checkbox" class=" eqLogicAttr" data-label-text="{{visible}}" data-l1key="isVisible" checked />
-                                </div>
-                            </div>
 
-                            <div class="form-group ">
-                                <label class="col-lg-3 control-label">{{Auto-actualisation (cron)}}</label>
-                                <div class="col-lg-4">
-                                    <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="autorefresh" placeholder="{{Auto-actualisation (cron)}}" />
-                                </div>
-                                <div class="col-lg-1">
-                                    <i class="fa fa-question-circle cursor bt_pageHelp floatright" data-name="cronSyntaxe"></i>
-                                </div>
-                            </div>
-
-                            <div class="form-group ">
-                                <label class="col-lg-3 control-label">{{Node ID}}</label>
-                                <div class="col-lg-4">
-                                    <input type="text" class="eqLogicAttr form-control" data-l1key="logicalId" />
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-                <div role="tabpanel" class="tab-pane active" id="eqlogictab">
-                    <div class="col-sm-6">
+        <div role="tabpanel" class="tab-pane active" id="eqlogictab">
+            <div class="row">
+                <div class="tab-content" style="height:calc(100%);overflow:auto;overflow-x: hidden;">
+                    <div role="tabpanel" class="tab-pane active" id="eqlogictab">
+                        <br />
                         <form class="form-horizontal">
                             <fieldset>
-                                <legend>{{Paramatrage}} </legend>
                                 <div class="form-group">
-                                    <label class="col-lg-2 control-label">{{Mode}}</label>
+                                    <label class="col-lg-3 control-label">{{Nom de l équipement}}</label>
                                     <div class="col-lg-4">
-                                        <select id="onewire_mode" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_mode">
-                                            <option value="gpio">{{GPIO}}</option>
-                                            <option value="owfs">{{OWFS}}</option>
+                                        <input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
+                                        <input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement}}" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label">{{Objet parent}}</label>
+                                    <div class="col-lg-4">
+                                        <select class="eqLogicAttr form-control" data-l1key="object_id">
+                                            <option value="">{{Aucun}}</option>
+                                            <?php
+                                            foreach (jeeObject::all() as $object) {
+                                                echo '<option value="' . $object->getId() . '">' . $object->getName() . '</option>';
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-lg-2 control-label">{{Equipement}}</label>
-                                    <div class="col-lg-4">
-                                        <select id="onewire_equipement" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_equipement">
-                                            <option value="mini">{{Mini}}</option>
-                                            <option value="diy">{{DIY}}</option>
-                                        </select>
+                                    <label class="col-lg-3 control-label">{{Catégorie}}</label>
+                                    <div class="col-lg-3">
+                                        <?php
+                                        $i = 0;
+                                        foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
+                                            echo '{{' . $value['name'] . '}}: <input type="checkbox" class="eqLogicAttr" data-label-text="{{' . $value['name'] . '}}"  data-l1key="category" data-l2key="' . $key . '" /><br>';
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-lg-2 control-label">{{Connexion}}</label>
-                                    <div class="col-lg-4">
-                                        <select id="onewire_equipement" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_connexion">
-                                            <option value="local">{{Local}}</option>
-                                            <option value="distant">{{Distant}}</option>
-                                        </select>
+                                    <label class="col-lg-3 control-label"></label>
+                                    <div class="col-lg-5">
+                                        Activer: <input type="checkbox" class=" eqLogicAttr" data-label-text="{{Activer}}" data-l1key="isEnable" checked />
+                                        Visible: <input type="checkbox" class=" eqLogicAttr" data-label-text="{{visible}}" data-l1key="isVisible" checked />
                                     </div>
                                 </div>
-                                <div id="connect">
-                                    <div id="onewire_addressip" class="form-group">
-                                        <label class="col-lg-2 control-label">{{Host}}</label>
-                                        <div class="col-lg-4">
-                                            <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_addressip" placeholder="{{Nom de l équipement}}" />
-                                        </div>
-                                    </div>
-                                    <div id="onewire_portssh" class="form-group">
-                                        <label class="col-lg-2 control-label">{{Port}} <span id="libellessh">{{SSH}}</span></label>
-                                        <div class="col-lg-4">
-                                            <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_portssh" placeholder="{{Port}}" />
-                                        </div>
-                                    </div>
-                                    <div id="onewire_user" class="form-group">
-                                        <label class="col-lg-2 control-label">{{Identifiant SSH}}</label>
-                                        <div class="col-lg-4">
-                                            <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_user" placeholder="{{Login SSH}}" />
-                                        </div>
-                                    </div>
-                                    <div id="onewire_password" class="form-group">
-                                        <label class="col-lg-2 control-label">{{MDP SSH}}</label>
-                                        <div class="col-lg-4">
-                                            <input type="password" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_password" placeholder="{{Mot de passe SSH}}" />
-                                        </div>
 
+                                <div class="form-group ">
+                                    <label class="col-lg-3 control-label">{{Auto-actualisation (cron)}}</label>
+                                    <div class="col-lg-4">
+                                        <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="autorefresh" placeholder="{{Auto-actualisation (cron)}}" />
                                     </div>
-                                    <div class="col-lg-6">
-                                        <label class="col-lg-4 control-label"></label>
-                                        <a class="btn btn-success eqLogicAction" style="margin-left:10px;margin-bottom: 17px;" data-action="bt_testConnexion"><i class="fa fa-plus-circle"></i> {{Tester}}</a>
+                                    <div class="col-lg-1">
+                                        <i class="fa fa-question-circle cursor bt_pageHelp floatright" data-name="cronSyntaxe"></i>
+                                    </div>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label class="col-lg-3 control-label">{{Node ID}}</label>
+                                    <div class="col-lg-4">
+                                        <input type="text" class="eqLogicAttr form-control" data-l1key="logicalId" />
                                     </div>
                                 </div>
                             </fieldset>
                         </form>
                     </div>
-                </div>
-                <div role="tabpanel" class="tab-pane" id="commandtab">
-                    <a class="btn btn-success btn-sm cmdAction " data-action="add"><i class="fa fa-plus-circle"></i> {{Commandes}}</a>
-                    <a class="btn btn-default" id="bt_configureDevice" title="Configurer"><i class="fa fa-wrench"></i></a><br /><br />
-                    <table id="table_cmd" class="table table-bordered  table-condensed">
-                        <thead>
-                            <tr>
-                                <th style="width: 200px;">{{Nom}}</th>
-                                <th style="width: 100px;" class="">{{Type}}</th>
-                                <th style="width: 200px;" class="">{{ID 1Wire}}</th>
-                                <th style="width: 200px;" class="">{{Class}}</th>
-                                <th style="width: 80px;" class="">{{Etalonner}}</th>
-                                <th>{{Paramètres}}</th>
-                                <th style="width: 100px;">{{Options}}</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
+<!--                    <div role="tabpanel" class="tab-pane active" id="eqlogictab">   -->
+                        <div class="col-sm-6">
+                            <form class="form-horizontal">
+                                <fieldset>
+                                    <legend>{{Paramatrage}} </legend>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label">{{Mode}}</label>
+                                        <div class="col-lg-4">
+                                            <select id="onewire_mode" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_mode">
+                                                <option value="gpio">{{GPIO}}</option>
+                                                <option value="owfs">{{OWFS}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label">{{Equipement}}</label>
+                                        <div class="col-lg-4">
+                                            <select id="onewire_equipement" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_equipement">
+                                                <option value="mini">{{Mini}}</option>
+                                                <option value="diy">{{DIY}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label">{{Connexion}}</label>
+                                        <div class="col-lg-4">
+                                            <select id="onewire_equipement" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_connexion">
+                                                <option value="local">{{Local}}</option>
+                                                <option value="distant">{{Distant}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="connect">
+                                        <div id="onewire_addressip" class="form-group">
+                                            <label class="col-lg-2 control-label">{{Host}}</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_addressip" placeholder="{{Nom de l équipement}}" />
+                                            </div>
+                                        </div>
+                                        <div id="onewire_portssh" class="form-group">
+                                            <label class="col-lg-2 control-label">{{Port}} <span id="libellessh">{{SSH}}</span></label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_portssh" placeholder="{{Port}}" />
+                                            </div>
+                                        </div>
+                                        <div id="onewire_user" class="form-group">
+                                            <label class="col-lg-2 control-label">{{Identifiant SSH}}</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_user" placeholder="{{Login SSH}}" />
+                                            </div>
+                                        </div>
+                                        <div id="onewire_password" class="form-group">
+                                            <label class="col-lg-2 control-label">{{MDP SSH}}</label>
+                                            <div class="col-lg-4">
+                                                <input type="password" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_password" placeholder="{{Mot de passe SSH}}" />
+                                            </div>
 
-                        </tbody>
-                    </table>
-                </div>
-                <form class="form-horizontal">
-                    <fieldset>
-                        <div class="form-actions">
-                            <a class="btn btn-danger eqLogicAction" data-action="remove"><i class="fa fa-minus-circle"></i> {{Supprimer}}</a>
-                            <a class="btn btn-success eqLogicAction" data-action="save"><i class="fa fa-check-circle"></i> {{Sauvegarder}}</a>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-4 control-label"></label>
+                                            <a class="btn btn-success eqLogicAction" style="margin-left:10px;margin-bottom: 17px;" data-action="bt_testConnexion"><i class="fa fa-plus-circle"></i> {{Tester}}</a>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
                         </div>
-                    </fieldset>
-                </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="commandtab">
+                        <a class="btn btn-success btn-sm cmdAction " data-action="add"><i class="fa fa-plus-circle"></i> {{Commandes}}</a>
+                        <a class="btn btn-default" id="bt_configureDevice" title="Configurer"><i class="fa fa-wrench"></i></a><br /><br />
+                        <table id="table_cmd" class="table table-bordered  table-condensed">
+                            <thead>
+                                <tr>
+                                    <th style="width: 200px;">{{Nom}}</th>
+                                    <th style="width: 100px;" class="">{{Type}}</th>
+                                    <th style="width: 200px;" class="">{{ID 1Wire}}</th>
+                                    <th style="width: 200px;" class="">{{Class}}</th>
+                                    <th style="width: 80px;" class="">{{Etalonner}}</th>
+                                    <th>{{Paramètres}}</th>
+                                    <th style="width: 100px;">{{Options}}</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
+                            </tbody>
+                        </table>
+                    </div>
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="form-actions">
+                                <a class="btn btn-danger eqLogicAction" data-action="remove"><i class="fa fa-minus-circle"></i> {{Supprimer}}</a>
+                                <a class="btn btn-success eqLogicAction" data-action="save"><i class="fa fa-check-circle"></i> {{Sauvegarder}}</a>
+                            </div>
+                        </fieldset>
+                    </form>
+
+                </div>
             </div>
         </div>
     </div>
-
 </div>
 <!-- TODO a supprimer en master -->
 <!-- <SCRIPT LANGUAGE="Javascript"> window.alert(Object.entries(contextmenuitems).length.tostring()); </script> -->
