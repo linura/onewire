@@ -57,7 +57,7 @@ if ($deamonRunning['state'] != 'ok') {
                 <center>
                     <i class="fas fa-project-diagram" style="font-size : 5em;color:indigo;"></i>
                 </center>
-                <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
+                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
                     <center>{{Afficher les composants du bus}}</center>
                 </span>
             </div>
@@ -67,7 +67,7 @@ if ($deamonRunning['state'] != 'ok') {
                 <center>
                     <i class="fa fa-refresh fa-spin" style="font-size : 5em;color:#767676;"></i>
                 </center>
-                <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
+                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
                     <center>{{Relancer OWFS}}</center>
                 </span>
             </div>
@@ -76,7 +76,7 @@ if ($deamonRunning['state'] != 'ok') {
                 <center>
                     <i class="fas fa-stop-circle" style="font-size : 5em;color:red;"></i>
                 </center>
-                <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
+                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
                     <center>{{Arreter OWFS}}</center>
                 </span>
             </div>
@@ -85,7 +85,7 @@ if ($deamonRunning['state'] != 'ok') {
                 <center>
                     <i class="fas fa-book" style="font-size : 5em;color:#767676;"></i>
                 </center>
-                <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
+                <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676">
                     <center>{{Documentation}}</center>
                 </span>
             </div>
