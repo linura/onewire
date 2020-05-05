@@ -269,7 +269,7 @@ if ($deamonRunning['state'] != 'ok') {
                                     </div>
                                 </fieldset>
                             </form>
-                        </div>
+<!--                        </div>  -->
                     </div>
                     <div role="tabpanel" class="tab-pane" id="commandtab">
                         <a class="btn btn-success btn-sm cmdAction " data-action="add"><i class="fa fa-plus-circle"></i> {{Commandes}}</a>
