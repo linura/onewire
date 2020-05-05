@@ -195,68 +195,68 @@ if ($deamonRunning['state'] != 'ok') {
                             </div>
                         </fieldset>
 
-                            <fieldset>
-                                <legend>{{Paramatrage}} </legend>
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label">{{Mode}}</label>
+                        <fieldset>
+                            <legend>{{Paramatrage}} </legend>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">{{Mode}}</label>
+                                <div class="col-lg-4">
+                                    <select id="onewire_mode" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_mode">
+                                        <option value="gpio">{{GPIO}}</option>
+                                        <option value="owfs">{{OWFS}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">{{Equipement}}</label>
+                                <div class="col-lg-4">
+                                    <select id="onewire_equipement" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_equipement">
+                                        <option value="mini">{{Mini}}</option>
+                                        <option value="diy">{{DIY}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">{{Connexion}}</label>
+                                <div class="col-lg-4">
+                                    <select id="onewire_equipement" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_connexion">
+                                        <option value="local">{{Local}}</option>
+                                        <option value="distant">{{Distant}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="connect">
+                                <div id="onewire_addressip" class="form-group">
+                                    <label class="col-lg-2 control-label">{{Host}}</label>
                                     <div class="col-lg-4">
-                                        <select id="onewire_mode" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_mode">
-                                            <option value="gpio">{{GPIO}}</option>
-                                            <option value="owfs">{{OWFS}}</option>
-                                        </select>
+                                        <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_addressip" placeholder="{{Nom de l équipement}}" />
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label">{{Equipement}}</label>
+                                <div id="onewire_portssh" class="form-group">
+                                    <label class="col-lg-2 control-label">{{Port}} <span id="libellessh">{{SSH}}</span></label>
                                     <div class="col-lg-4">
-                                        <select id="onewire_equipement" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_equipement">
-                                            <option value="mini">{{Mini}}</option>
-                                            <option value="diy">{{DIY}}</option>
-                                        </select>
+                                        <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_portssh" placeholder="{{Port}}" />
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label">{{Connexion}}</label>
+                                <div id="onewire_user" class="form-group">
+                                    <label class="col-lg-2 control-label">{{Identifiant SSH}}</label>
                                     <div class="col-lg-4">
-                                        <select id="onewire_equipement" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_connexion">
-                                            <option value="local">{{Local}}</option>
-                                            <option value="distant">{{Distant}}</option>
-                                        </select>
+                                        <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_user" placeholder="{{Login SSH}}" />
                                     </div>
                                 </div>
-                                <div id="connect">
-                                    <div id="onewire_addressip" class="form-group">
-                                        <label class="col-lg-2 control-label">{{Host}}</label>
-                                        <div class="col-lg-4">
-                                            <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_addressip" placeholder="{{Nom de l équipement}}" />
-                                        </div>
+                                <div id="onewire_password" class="form-group">
+                                    <label class="col-lg-2 control-label">{{MDP SSH}}</label>
+                                    <div class="col-lg-4">
+                                        <input type="password" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_password" placeholder="{{Mot de passe SSH}}" />
                                     </div>
-                                    <div id="onewire_portssh" class="form-group">
-                                        <label class="col-lg-2 control-label">{{Port}} <span id="libellessh">{{SSH}}</span></label>
-                                        <div class="col-lg-4">
-                                            <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_portssh" placeholder="{{Port}}" />
-                                        </div>
-                                    </div>
-                                    <div id="onewire_user" class="form-group">
-                                        <label class="col-lg-2 control-label">{{Identifiant SSH}}</label>
-                                        <div class="col-lg-4">
-                                            <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_user" placeholder="{{Login SSH}}" />
-                                        </div>
-                                    </div>
-                                    <div id="onewire_password" class="form-group">
-                                        <label class="col-lg-2 control-label">{{MDP SSH}}</label>
-                                        <div class="col-lg-4">
-                                            <input type="password" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="onewire_password" placeholder="{{Mot de passe SSH}}" />
-                                        </div>
 
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="col-lg-4 control-label"></label>
-                                        <a class="btn btn-success eqLogicAction" style="margin-left:10px;margin-bottom: 17px;" data-action="bt_testConnexion"><i class="fa fa-plus-circle"></i> {{Tester}}</a>
-                                    </div>
                                 </div>
-                            </fieldset>
-                        </form>
+                                <div class="col-lg-6">
+                                    <label class="col-lg-4 control-label"></label>
+                                    <a class="btn btn-success eqLogicAction" style="margin-left:10px;margin-bottom: 17px;" data-action="bt_testConnexion"><i class="fa fa-plus-circle"></i> {{Tester}}</a>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="commandtab">
