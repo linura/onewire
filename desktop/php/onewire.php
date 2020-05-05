@@ -127,7 +127,7 @@ if ($deamonRunning['state'] != 'ok') {
     </div>
 
     <!-- Container du panneau de contrôle -->
-    <!-- Liste des onglets -->0
+    <!-- Liste des onglets -->
     <div class="col-lg-10 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
         <!-- Bouton sauvegarder -->
         <a class="btn btn-success eqLogicAction pull-right" data-action="save"><i class="fa fa-check-circle"></i>
