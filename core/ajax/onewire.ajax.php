@@ -30,29 +30,29 @@ try {
     }
 
     if (init('action') == 'installDongle') {
-		exec('sudo /bin/bash ' . dirname(__FILE__) . '/../../ressources/dongle/usb_install.sh >> '.log::getPathToLog('onewire_dependancy') . ' 2>&1 &');
-		ajax::success();
+        exec('sudo /bin/bash ' . dirname(__FILE__) . '/../../ressources/dongle/usb_install.sh >> ' . log::getPathToLog('onewire_dependancy') . ' 2>&1 &');
+        ajax::success();
     }
 
     if (init('action') == 'installGpio') {
-		exec('sudo /bin/bash ' . dirname(__FILE__) . '/../../ressources/gpio/gpio_install.sh >> '.log::getPathToLog('onewire_dependancy') . ' 2>&1 &');
-		ajax::success();
+        exec('sudo /bin/bash ' . dirname(__FILE__) . '/../../ressources/gpio/gpio_install.sh >> ' . log::getPathToLog('onewire_dependancy') . ' 2>&1 &');
+        ajax::success();
     }
 
     if (init('action') == 'installDI2c') {
-		exec('sudo /bin/bash ' . dirname(__FILE__) . '/../../ressources/i2c/i2c_install.sh >> '.log::getPathToLog('onewire_dependancy') . ' 2>&1 &');
-		ajax::success();
+        exec('sudo /bin/bash ' . dirname(__FILE__) . '/../../ressources/i2c/i2c_install.sh >> ' . log::getPathToLog('onewire_dependancy') . ' 2>&1 &');
+        ajax::success();
     }
 
     if (init('action') == 'test_connexion') {
 
-    	$mode = init('mode');
-		$connexion = init('connexion');
-		$host = init('host');
-		$port = init('port');
-		$login = init('login');
-		$pass = init('pass');
-        $test = onewire::test_connexion($mode,$connexion,$host,$port,$login,$pass);
+        $mode = init('mode');
+        $connexion = init('connexion');
+        $host = init('host');
+        $port = init('port');
+        $login = init('login');
+        $pass = init('pass');
+        $test = onewire::test_connexion($mode, $connexion, $host, $port, $login, $pass);
         if ($test === true) {
             ajax::success();
         } else {
@@ -61,66 +61,59 @@ try {
     }
 
 
-   if (init('action') == 'stopowserver') {
+    if (init('action') == 'stopowserver') {
         onewire::stopowserver();
         ajax::success();
     }
 
 
-    if(init('action') == 'updateSql'){
+    if (init('action') == 'updateSql') {
         onewire::updateSql();
         ajax::success();
     }
 
-   if(init('action') == 'sendparameter'){
+    if (init('action') == 'sendparameter') {
         $param = init('param');
         $sensor_id =  init('sensor_id');
         $valeur = init('valeur');
         $eq = cmd::byId(init('eq_id'));
-        onewireCmd::AjaxsendParameter($param,$sensor_id,$valeur,$eq);
+        onewireCmd::AjaxsendParameter($param, $sensor_id, $valeur, $eq);
         ajax::success();
     }
 
     if (init('action') == 'getValue') {
-		$sensor_class =  init('sensor_class');
-		$cmd = cmd::byId(init('sensor_id'));
+        $sensor_class =  init('sensor_class');
+        $cmd = cmd::byId(init('sensor_id'));
         return $cmd->getValue(true);
-
-        //ajax::success();
     }
-        if (init('action') == 'AddSendHistory') {
-		$sensor_class =  init('sensor_class');
-		$sensor_id =  init('sensor_id');
-		$history_type =  init('history_type');
-		$sensor_value =  init('sensor_value');
-        return onewireCmd::AddSendHistory($sensor_id,$sensor_class,$sensor_value,$history_type);
-        //ajax::success();
+    if (init('action') == 'AddSendHistory') {
+        $sensor_class =  init('sensor_class');
+        $sensor_id =  init('sensor_id');
+        $history_type =  init('history_type');
+        $sensor_value =  init('sensor_value');
+        return onewireCmd::AddSendHistory($sensor_id, $sensor_class, $sensor_value, $history_type);
     }
 
 
 
-    if(init('action') == 'getComposants'){
+    if (init('action') == 'getComposants') {
 
         return onewireCmd::getComposants();
     }
 
 
-    if(init('action') == 'isgroup'){
-       // $name = $_POST['name'];
+    if (init('action') == 'isgroup') {
         $name =  init('name');
         return onewireCmd::getIsgroup($name);
     }
 
-    if(init('action') == 'getclass'){
-       // $name = $_POST['name'];
-        $name =  init('name',false);
-       // $group = (isset($_POST['group']) ? $_POST['group'] : false);
+    if (init('action') == 'getclass') {
+        $name =  init('name', false);
         $group =  init('group');
-        return onewireCmd::getclass($name,$group);
+        return onewireCmd::getclass($name, $group);
     }
 
-    if(init('action') == 'getgroup'){
-        //$name = $_POST['name'];
+    if (init('action') == 'getgroup') {
         $name =  init('name');
         return onewireCmd::getgroup($name);
     }
@@ -130,4 +123,3 @@ try {
 } catch (Exception $e) {
     ajax::error(displayExeption($e), $e->getCode());
 }
-?>

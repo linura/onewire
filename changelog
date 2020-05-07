@@ -1,4 +1,6 @@
 . 03/05/2020
   - Mise à jour du plugin en version 4 de jeedom
   - Modification de différents boutons et icone
-  - Mise a jour de l'affichage des equipements en fonction de leur connexion
+  - Mise a jour de l'affichage des equipements en fonction de leur type de connexion
+05/05/2020
+  - Mise au propre du code indentation + suppression commentaires inutilent et parties de codes en commentaire
