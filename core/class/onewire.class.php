@@ -477,6 +477,8 @@ class onewireCmd extends cmd
 				$output = ssh2_exec($connection, $sonde);
 				stream_set_blocking($output, true);
 				$temp = stream_get_contents($output);
+/* TODO */		if ($output === NULL || !$output)
+					message::add('onewire', 'Une sonde est en erreur. Merci de verifier le bus ou la sonde');
 				if (!$temp || $temp === NULL)
 					$temp = trim(exec($sonde));
 				log::add('onewire', 'debug', 'TypeGPIO_light_esclave->Valeur  trouvée : ' . $temp);
@@ -643,7 +645,7 @@ class onewireCmd extends cmd
 
 			if ((int) $temp == 85) {
 				log::add('onewire', 'debug', 'La sonde est en erreur on ne fait rien. Merci de verifier le composant ou le cablage');
-/*TODO*/		message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: '.$temp);
+/*TODO*/		message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
 				return false;
 			}
 		}
