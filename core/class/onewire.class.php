@@ -504,7 +504,7 @@ class onewireCmd extends cmd
 			echo json_encode($temp);
 		} else {
 			if (!$temp || $temp === NULL)
-/*TODO*/			message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le bus ou la sonde');
+/*TODO*/			message::add('onewire', 'Une sonde est en erreur. Merci de verifier le bus ou la sonde');
 			return $temp;
 		}
 	}
