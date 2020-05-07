@@ -15,6 +15,10 @@
  * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*LEBANSAIS C 07/05/2020 
+*		- modification de TypeGPIO_light pour afficher une erreur si le composant n'est pas sur le bus ou ne repond pas
+*		- modification de execute pour afficher un message dans le centre de message en cas de valeur incorecte
+*/
 
 /* * *************sudo /etc/init.d/owserver restart**************Includes********************************* */
 require_once dirname(__FILE__) . '/../../core/php/onewire.inc.php';
@@ -499,6 +503,8 @@ class onewireCmd extends cmd
 			onewireCmd::AddSendHistory($this->getConfiguration('instanceId'), $this->getConfiguration('composantClass'), $temp, 'receive');
 			echo json_encode($temp);
 		} else {
+			if (!$temp || $temp === NULL)
+/*TODO*/			message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le bus ou la sonde');
 			return $temp;
 		}
 	}
@@ -637,6 +643,7 @@ class onewireCmd extends cmd
 
 			if ((int) $temp == 85) {
 				log::add('onewire', 'debug', 'La sonde est en erreur on ne fait rien. Merci de verifier le composant ou le cablage');
+/*TODO*/		message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage');
 				return false;
 			}
 		}
