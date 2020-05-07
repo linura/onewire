@@ -4,3 +4,6 @@
   - Mise a jour de l'affichage des equipements en fonction de leur type de connexion
 05/05/2020
   - Mise au propre du code indentation + suppression commentaire inutile et bout de code en commentaire
+07/05/2020
+  - Ajout d'un message dans le centre de message si un composant ne repond pas ou est absent du bus
+  - Ajout d'un message dans le centre de message si un composant repond une valeur erronée par un defaut de bus (8500)
