@@ -479,7 +479,7 @@ class onewireCmd extends cmd
 				$temp = stream_get_contents($output);
 /* TODO */		if ($output === NULL || !$output)
 					message::add('onewire', 'Une sonde est en erreur. Merci de verifier le bus ou la sonde');
-				message:add($output);
+				message::add($output);
 				if (!$temp || $temp === NULL)
 					$temp = trim(exec($sonde));
 				log::add('onewire', 'debug', 'TypeGPIO_light_esclave->Valeur  trouvée : ' . $temp);
