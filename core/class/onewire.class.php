@@ -643,6 +643,7 @@ class onewireCmd extends cmd
 
 			if ((int) $temp == 85) {
 				log::add('onewire', 'debug', 'La sonde est en erreur on ne fait rien. Merci de verifier le composant ou le cablage');
+/*TODO*/		message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: '.$temp);
 				return false;
 			}
 		}
