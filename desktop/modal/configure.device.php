@@ -183,7 +183,6 @@ $sameDevices = array();
     });
 
     function configureDeviceLoad(sensor_id, sensor_class) {
-        window.alert("Entree dans deviceload");
         $.ajax({ // fonction permettant de faire de l'ajax
             type: "POST", // methode de transmission des données au fichier php
             url: "plugins/onewire/core/ajax/onewire.ajax.php", // url du fichier php
@@ -200,8 +199,6 @@ $sameDevices = array();
                 $('#view_readparameter').html(data);
             }
         });
-        /*TODO*/
-        window.alert("sortie de deviceload");
     }
 
     function save_history(sensor_id, sensor_class, sensor_value, history_type) {
