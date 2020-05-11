@@ -41,8 +41,8 @@ foreach ($class as $c => $cl) {
     $select .= '<option value="' . $cl[0] . '">' . $cl[0] . '</option>';
 /*todo */   
     echo '<script type = "text/javascript"> alert("in class tab 0 '. $cl[0] .'");</script>';
-    echo '<script type = "text/javascript"> alert("in class tab 1 '. $cl[0] .'");</script>';
-    echo '<script type = "text/javascript"> alert("in class tab 2 '. $cl[0] .'");</script>';
+    echo '<script type = "text/javascript"> alert("in class tab 1 '. $cl[1] .'");</script>';
+    echo '<script type = "text/javascript"> alert("in class tab 2 '. $cl[2] .'");</script>';
 }
 
 sendVarToJS('configureDeviceId', init('id'));
