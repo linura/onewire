@@ -40,7 +40,7 @@ $select = '<option>choisir</option>';
 foreach ($class as $c => $cl) {
     $select .= '<option value="' . $cl . '">' . $cl . '</option>';
 /*todo */   
-    echo '<script type = "text/javascript"> alert("in class '. $cl .'");</script>';
+    echo '<script type = "text/javascript"> alert("in class '. $cl[0] .'");</script>';
 }
 
 sendVarToJS('configureDeviceId', init('id'));
