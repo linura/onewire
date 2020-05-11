@@ -31,15 +31,17 @@ if (count($cmd) > 0)
     $cmd = $cmd[0];
 
 // $class = onewireCmd::getclass($cmd->getConfiguration('composantName'), $cmd->getConfiguration('composantGroup', false), false);
-$class = onewireCmd::getclass($cmd->getConfiguration('composantName'), $cmd->getConfiguration('composantGroup'), false);
-$lebtemp = $cmd->getConfiguration('composantName');
+$class = onewireCmd::getclass($cmd->getConfiguration('composantName'), $cmd->getConfiguration('composantGroup',false), false);
+/*TODO*/
+/*$lebtemp = $cmd->getConfiguration('composantName');
 echo '<script type = "text/javascript"> alert("composant name '. $lebtemp .'");</script>';
 $lebtemp = $cmd->getConfiguration('composantGroup');
 echo '<script type = "text/javascript"> alert("composant groupe '. $lebtemp .'");</script>';
-$select = '<option>choisir</option>';
+$select = '<option>choisir</option>';*/
 foreach ($class as $c => $cl) {
     $select .= '<option value="' . $cl[0] . '">' . $cl[0] . '</option>';
-/*todo */   
+/*TODO*/   
+    echo '<script type = "text/javascript"> alert("in class C '. $c .'");</script>';
     echo '<script type = "text/javascript"> alert("in class tab 0 '. $cl[0] .'");</script>';
     echo '<script type = "text/javascript"> alert("in class tab 1 '. $cl[1] .'");</script>';
     echo '<script type = "text/javascript"> alert("in class tab 2 '. $cl[2] .'");</script>';
