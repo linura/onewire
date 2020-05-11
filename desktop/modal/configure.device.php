@@ -38,9 +38,11 @@ $lebtemp = $cmd->getConfiguration('composantGroup');
 echo '<script type = "text/javascript"> alert("composant groupe '. $lebtemp .'");</script>';
 $select = '<option>choisir</option>';
 foreach ($class as $c => $cl) {
-    $select .= '<option value="' . $cl[0] . '">' . $cl . '</option>';
+    $select .= '<option value="' . $cl[0] . '">' . $cl[0] . '</option>';
 /*todo */   
-    echo '<script type = "text/javascript"> alert("in class '. $cl[0] .'");</script>';
+    echo '<script type = "text/javascript"> alert("in class tab 0 '. $cl[0] .'");</script>';
+    echo '<script type = "text/javascript"> alert("in class tab 1 '. $cl[0] .'");</script>';
+    echo '<script type = "text/javascript"> alert("in class tab 2 '. $cl[0] .'");</script>';
 }
 
 sendVarToJS('configureDeviceId', init('id'));
