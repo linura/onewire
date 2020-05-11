@@ -31,12 +31,12 @@ if (count($cmd) > 0)
     $cmd = $cmd[0];
 
 $class = onewireCmd::getclass($cmd->getConfiguration('composantName'), $cmd->getConfiguration('composantGroup', false), false);
-echo '<script type = "text/javascript"> alert("class "'. $class .'");</script>';
+echo '<script type = "text/javascript"> alert("class '. $class .');</script>';
 $select = '<option>choisir</option>';
 foreach ($class as $c => $cl) {
     $select .= '<option value="' . $cl . '">' . $cl . '</option>';
 /*todo */   
-    echo '<script type = "text/javascript"> alert("in class "'. $cl .'");</script>';
+    echo '<script type = "text/javascript"> alert("in class '. $cl .'");</script>';
 }
 
 sendVarToJS('configureDeviceId', init('id'));
