@@ -33,7 +33,7 @@ if (count($cmd) > 0)
 $class = onewireCmd::getclass($cmd->getConfiguration('composantName'), $cmd->getConfiguration('composantGroup', false), false);
 $lebtemp = $cmd->getConfiguration('composantName');
 echo '<script type = "text/javascript"> alert("composant name '. $lebtemp .'");</script>';
-$lebtemp = $cmd->getConfiguration('composantGroup', false);
+$lebtemp = $cmd->getConfiguration('composantGroup');
 echo '<script type = "text/javascript"> alert("composant groupe '. $lebtemp .'");</script>';
 $select = '<option>choisir</option>';
 foreach ($class as $c => $cl) {
