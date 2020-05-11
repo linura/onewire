@@ -187,7 +187,7 @@ $sameDevices = array();
             type: "POST", // methode de transmission des données au fichier php
             url: "plugins/onewire/core/ajax/onewire.ajax.php", // url du fichier php
             data: {
-                action: "getValue2",
+                action: "getValue",
                 sensor_id: sensor_id,
                 sensor_class: sensor_class
             },
