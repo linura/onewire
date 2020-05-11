@@ -38,7 +38,7 @@ $lebtemp = $cmd->getConfiguration('composantGroup');
 echo '<script type = "text/javascript"> alert("composant groupe '. $lebtemp .'");</script>';
 $select = '<option>choisir</option>';
 foreach ($class as $c => $cl) {
-    $select .= '<option value="' . $cl . '">' . $cl . '</option>';
+    $select .= '<option value="' . $cl[0] . '">' . $cl . '</option>';
 /*todo */   
     echo '<script type = "text/javascript"> alert("in class '. $cl[0] .'");</script>';
 }
