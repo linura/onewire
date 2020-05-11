@@ -36,10 +36,13 @@ $class = onewireCmd::getclass($cmd->getConfiguration('composantName'), $cmd->get
 /*$lebtemp = $cmd->getConfiguration('composantName');
 echo '<script type = "text/javascript"> alert("composant name '. $lebtemp .'");</script>';
 $lebtemp = $cmd->getConfiguration('composantGroup');
-echo '<script type = "text/javascript"> alert("composant groupe '. $lebtemp .'");</script>';
-$select = '<option>choisir</option>';*/
+echo '<script type = "text/javascript"> alert("composant groupe '. $lebtemp .'");</script>';*/
+$select = '<option>choisir</option>';
 foreach ($class as $c => $cl) {
-    $select .= '<option value="' . $cl[0] . '">' . $cl[0] . '</option>';
+    foreach($cl as $val){
+        $select .= '<option value="' . $val . '">' . $val . '</option>';
+    }
+    //$select .= '<option value="' . $cl[0] . '">' . $cl[0] . '</option>';
 /*TODO*/   
     echo '<script type = "text/javascript"> alert("in class C '. $c .'");</script>';
     echo '<script type = "text/javascript"> alert("in class tab 0 '. $cl[0] .'");</script>';
