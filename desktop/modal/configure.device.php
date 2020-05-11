@@ -170,6 +170,7 @@ $sameDevices = array();
     $('.bt_configureReadParameter').on('click', function() {
         var sensor_id = $('.onewireParameters[data-l2key=sensor_id]').val();
         var sensor_class = $('.onewireParameters[data-l2key=in_parametersReadId]').val();
+        /*TODO*/
         window.alert("sensor id " + sensor_id);
         window.alert("sensor class " + sensor_class);
         if (sensor_class != '' && sensor_id != '')
