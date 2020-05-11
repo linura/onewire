@@ -197,7 +197,7 @@ $sameDevices = array();
             },
             success: function(data) { // si l'appel a bien fonctionné
                 //$('#view_readparameter').html(data);
-                window.alert('La fonction a bien lu des données');
+                window.alert(data);
             }
         });
     }
