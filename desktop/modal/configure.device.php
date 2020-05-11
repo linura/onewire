@@ -187,14 +187,13 @@ $sameDevices = array();
             type: "POST", // methode de transmission des données au fichier php
             url: "plugins/onewire/core/ajax/onewire.ajax.php", // url du fichier php
             data: {
-                action: "getValue",
+                action: "getValue2",
                 sensor_id: sensor_id,
                 sensor_class: sensor_class
             },
             dataType: 'json',
             error: function(request, status, error) {
                 handleAjaxError(request, status, error, $('#div_configureDeviceAlert'));
-                handleAjaxError($url);
             },
             success: function(data) { // si l'appel a bien fonctionné
                 $('#view_readparameter').html(data);
