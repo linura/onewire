@@ -195,8 +195,8 @@ $sameDevices = array();
                 handleAjaxError(request, status, error, $('#div_configureDeviceAlert'));
             },
             success: function(data) { // si l'appel a bien fonctionné
-                $('#view_readparameter').html(data.valeur);
-                window.alert(data.valeur);
+                $('#view_readparameter').html(data);
+                window.alert(data);
             }
         });
     }
