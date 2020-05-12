@@ -84,8 +84,9 @@ try {
     if (init('action') == 'getValue') {
         $sensor_class =  init('sensor_class');
         $cmd = cmd::byId(init('sensor_id'));
-        return $cmd->getValue(true);
-        //return onewireCmd::getValue(true);
+        //return $cmd->getValue(true);
+        console.debug("passage dans la fonction ajax class = " + $sensor_class + "id = " + $sensor_id );
+        return onewireCmd::getValue(true);
         //ajax::success();
     }
     if (init('action') == 'AddSendHistory') {
