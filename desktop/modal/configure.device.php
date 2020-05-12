@@ -186,7 +186,7 @@ $sameDevices = array();
         window.alert("sensor class " + sensor_class);
         $.ajax({ // fonction permettant de faire de l'ajax
             type: "POST", // methode de transmission des données au fichier php
-            url: "../plugins/onewire/core/ajax/onewire.ajax.php", // url du fichier php
+            url: "plugins/onewire/core/ajax/onewire.ajax.php", // url du fichier php
             data: {
                 action: "getValue",
                 sensor_id: sensor_id,
