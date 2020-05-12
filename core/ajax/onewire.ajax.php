@@ -85,6 +85,7 @@ try {
         $sensor_class =  init('sensor_class');
         $cmd = cmd::byId(init('sensor_id'));
         //return $cmd->getValue(true);
+        //TODO
         //return onewireCmd::getValue(true);
         ajax::success();
     }
