@@ -86,7 +86,7 @@ try {
         $cmd = cmd::byId(init('sensor_id'));
         //return $cmd->getValue(true);
         console.debug("passage dans la fonction ajax");
-        console.debug("class = " + $sensor_class + "id = " + $sensor_id );
+        //console.debug("class = " + $sensor_class + "id = " + $sensor_id );
         //return onewireCmd::getValue(true);
         ajax::success();
     }
