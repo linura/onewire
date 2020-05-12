@@ -16,7 +16,7 @@
  */
 
 jQuery(document).ready(function () {
-    console.debug($('.eqLogicAttr[data-l2key=onewire_mode]').val());
+    //console.debug($('.eqLogicAttr[data-l2key=onewire_mode]').val());
     view_mode($('.eqLogicAttr[data-l2key=onewire_mode]').val());
     view_connexion($('.eqLogicAttr[data-l2key=onewire_connexion]').val());
 });
