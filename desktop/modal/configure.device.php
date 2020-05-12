@@ -192,7 +192,6 @@ $sameDevices = array();
             dataType: 'json',
             error: function(request, status, error) {
                 handleAjaxError(request, status, error, $('#div_configureDeviceAlert'));
-                console.debug(request + ' ' + status + ' ' + error);
             },
             success: function(data) { // si l'appel a bien fonctionné
                 //$('#view_readparameter').html(data);
