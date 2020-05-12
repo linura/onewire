@@ -18,6 +18,8 @@
 /*LEBANSAIS C 07/05/2020 
 *		- modification de TypeGPIO_light pour afficher une erreur si le composant n'est pas sur le bus ou ne repond pas
 *		- modification de execute pour afficher un message dans le centre de message en cas de valeur incorecte
+* LEBANSAIS C 12/05/2020
+*		- modification de execute pour creer une boucle de relecture de la sonde en cas de defaut pour confirmer celui-ci
 */
 
 /* * *************sudo /etc/init.d/owserver restart**************Includes********************************* */
@@ -655,7 +657,6 @@ class onewireCmd extends cmd
 
 				if ((int) $temp == 85 && $loop_sec_read == 1) {
 					log::add('onewire', 'debug', 'La sonde est en erreur on ne fait rien. Merci de verifier le composant ou le cablage');
-					/*TODO*/
 					message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
 					return false;
 				}
