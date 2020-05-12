@@ -195,7 +195,7 @@ $sameDevices = array();
             dataType: 'json',
             error: function(request, status, error) {
                 handleAjaxError(request, status, error, $('#div_configureDeviceAlert'));
-                window.alert("Erreur fonction jeeson" + error);
+                window.alert("Erreur apres fonction Ajax load device " + error);
             },
             success: function(data) { // si l'appel a bien fonctionné
                 //$('#view_readparameter').html(data);
