@@ -182,8 +182,8 @@ $sameDevices = array();
     });
 
     function configureDeviceLoad(sensor_id, sensor_class) {
-        window.alert("sensor id " + sensor_id);
-        window.alert("sensor class " + sensor_class);
+        console.debug("sensor id " + sensor_id);
+        console.debug("sensor class " + sensor_class);
         $.ajax({ // fonction permettant de faire de l'ajax
             type: "POST", // methode de transmission des données au fichier php
             url: "plugins/onewire/core/ajax/onewire.ajax.php", // url du fichier php
