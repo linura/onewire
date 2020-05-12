@@ -604,7 +604,10 @@ class onewireCmd extends cmd
 /*TODO Creation de la fonction getvalue avec AJAX 12/05/2020 LEBANSAIS C*/
 	public function getvalueAjax()
 	{
-		return $this->TypeGPIO_light_esclave($ajax);
+		console.debug("In getValueAjax");
+		//return $this->TypeGPIO_light_esclave($ajax);
+		return "18.5";
+		console.debug("out getValueAjax");
 	}
 
 
