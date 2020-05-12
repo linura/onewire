@@ -477,7 +477,8 @@ class onewireCmd extends cmd
 				$output = ssh2_exec($connection, $sonde);
 				stream_set_blocking($output, true);
 				$temp = stream_get_contents($output);
-/* TODO */		if ($temp === NULL || !$temp)
+				/* TODO */
+				if ($temp === NULL || !$temp)
 					message::add('onewire', 'Une sonde est en erreur. Merci de verifier le bus ou la sonde');
 				if (!$temp || $temp === NULL)
 					$temp = trim(exec($sonde));
@@ -506,7 +507,7 @@ class onewireCmd extends cmd
 			echo json_encode($temp);
 		} else {
 			if (!$temp || $temp === NULL)
-/*TODO*/			message::add('onewire', 'Une sonde est en erreur. Merci de verifier le bus ou la sonde');
+				/*TODO*/			message::add('onewire', 'Une sonde est en erreur. Merci de verifier le bus ou la sonde');
 			return $temp;
 		}
 	}
@@ -601,12 +602,12 @@ class onewireCmd extends cmd
 			return onewireCmd::TypeOwserver($ajax);
 		}
 	}
-/*TODO Creation de la fonction getvalue avec AJAX 12/05/2020 LEBANSAIS C*/
+	/*TODO Creation de la fonction getvalue avec AJAX 12/05/2020 LEBANSAIS C*/
 	public function getvalueAjax()
 	{
-		console.debug("In getValueAjax");
+		console . debug("In getValueAjax");
 		//return $this->TypeGPIO_light_esclave($ajax);
-		console.debug("out getValueAjax");
+		console . debug("out getValueAjax");
 	}
 
 
@@ -630,10 +631,10 @@ class onewireCmd extends cmd
 	public  function execute($_options = array())
 	{
 		$loop_sec_read = 0;
-		while($loop_sec_read < 2){
+		while ($loop_sec_read < 2) {	//boucle de seconde lecture en cas d'erreur sur lors de la premiere lecture pour confirmer l'erreur
 			$equipement = eqLogic::byId($this->getEqLogic_id(), 'onewire');
 			log::add('onewire', 'debug', 'Execute()-> Lecture du composant : ' . $this->getConfiguration('instanceId') . ' avec la class ' . $this->getConfiguration('composantClass'));
-	
+
 			if ($this->getType() != 'info') {
 				log::add('onewire', 'debug', 'Type action');
 				if ($equipement->getConfiguration('onewire_mode') == 'owfs') {/*Si action et mode OWFS*/
@@ -651,23 +652,21 @@ class onewireCmd extends cmd
 					$this->save();
 				}
 				$temp = $this->getValue(false);
-	
-				if ((int) $temp == 85 && $loop_sec_read ==1) {
+
+				if ((int) $temp == 85 && $loop_sec_read == 1) {
 					log::add('onewire', 'debug', 'La sonde est en erreur on ne fait rien. Merci de verifier le composant ou le cablage');
-	/*TODO*/		message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
+					/*TODO*/
+					message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
 					return false;
 				}
-				if((int) $temp == 85){
+				if ((int) $temp == 85) {
 					$loop_sec_read++;
 				}
 			}
-			if($temp != 85)
-				{
-					$loop_sec_read =2;
-				} 
+			if ($temp != 85) {
+				$loop_sec_read = 2;
+			}
 		}
-		
-
 
 		/*Gestion des alertes*/
 		onewireCmd::MailAlert($this, $temp);
@@ -679,8 +678,6 @@ class onewireCmd extends cmd
 				$temp =  $temp / (1.0546 - (0.00216 * $temp));
 				log::add('onewire', 'debug', 'composnant Humidity Sensor detecter la formule est donc : Humidité réelle = (humidité relevée)/(1.0546 –0.00216*température relevée, voir la doc )');
 			}
-
-
 			$temp = $temp + $this->getConfiguration('calibrer', 0);
 			$replace['#state#'] = $temp;
 			log::add('onewire', 'debug', 'Le composnant  ' . $this->getConfiguration('instanceId') . ' a une valeur de ' . $temp . ' (#state# = ' . number_format($replace['#state#'], 2) . ')');
