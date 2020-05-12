@@ -170,8 +170,8 @@ $sameDevices = array();
         var sensor_id = $('.onewireParameters[data-l2key=sensor_id]').val();
         var sensor_class = $('.onewireParameters[data-l2key=in_parametersReadId]').val();
         /*TODO*/
-      /*  window.alert("sensor id " + sensor_id);
-        window.alert("sensor class " + sensor_class);*/
+        window.alert("sensor id " + sensor_id);
+        window.alert("sensor class " + sensor_class);
         if (sensor_class != '' && sensor_id != '')
             configureDeviceLoad(sensor_id, sensor_class);
         else
@@ -182,8 +182,8 @@ $sameDevices = array();
     });
 
     function configureDeviceLoad(sensor_id, sensor_class) {
-        window.alert('sensor id ' . sensor_id);
-        window.alert('sensor class' . sensor_class);
+        window.alert("sensor id " + sensor_id);
+        window.alert("sensor class " + sensor_class);
         $.ajax({ // fonction permettant de faire de l'ajax
             type: "POST", // methode de transmission des données au fichier php
             url: "../plugins/onewire/core/ajax/onewire.ajax.php", // url du fichier php
