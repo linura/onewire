@@ -84,7 +84,7 @@ try {
     if (init('action') == 'getValue') {
         $sensor_class =  init('sensor_class');
         $cmd = cmd::byId(init('sensor_id'));
-        return $cmd->getValue(true);
+        return $cmd->getValue(false);
     }
     if (init('action') == 'AddSendHistory') {
         $sensor_class =  init('sensor_class');
