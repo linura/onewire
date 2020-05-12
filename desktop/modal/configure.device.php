@@ -199,7 +199,7 @@ $sameDevices = array();
             },
             success: function(data) { // si l'appel a bien fonctionné
                 //$('#view_readparameter').html(data);
-                window.alert(data);
+                console.debug(data);
             }
         });
     }
