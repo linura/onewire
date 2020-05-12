@@ -85,7 +85,7 @@ try {
         $sensor_class =  init('sensor_class');
         $cmd = cmd::byId(init('sensor_id'));
         //return $cmd->getValue(true);
-        return onewirecmd::getValue($cmd,$sensor_class);
+        return "good";
     }
     if (init('action') == 'AddSendHistory') {
         $sensor_class =  init('sensor_class');
