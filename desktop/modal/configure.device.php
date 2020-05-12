@@ -170,8 +170,8 @@ $sameDevices = array();
         var sensor_id = $('.onewireParameters[data-l2key=sensor_id]').val();
         var sensor_class = $('.onewireParameters[data-l2key=in_parametersReadId]').val();
         /*TODO*/
-        window.alert("sensor id " + sensor_id);
-        window.alert("sensor class " + sensor_class);
+        /*window.alert("sensor id " + sensor_id);
+        window.alert("sensor class " + sensor_class);*/
         if (sensor_class != '' && sensor_id != '')
             configureDeviceLoad(sensor_id, sensor_class);
         else
@@ -195,6 +195,7 @@ $sameDevices = array();
             dataType: 'json',
             error: function(request, status, error) {
                 handleAjaxError(request, status, error, $('#div_configureDeviceAlert'));
+                window.alert("Erreur fonction jeeson" + error);
             },
             success: function(data) { // si l'appel a bien fonctionné
                 //$('#view_readparameter').html(data);
