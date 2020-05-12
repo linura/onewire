@@ -630,7 +630,7 @@ class onewireCmd extends cmd
 	public  function execute($_options = array())
 	{
 		$loop_sec_read = 0;
-		do{
+		while($loop_sec_read < 2){
 			$equipement = eqLogic::byId($this->getEqLogic_id(), 'onewire');
 			log::add('onewire', 'debug', 'Execute()-> Lecture du composant : ' . $this->getConfiguration('instanceId') . ' avec la class ' . $this->getConfiguration('composantClass'));
 	
@@ -657,14 +657,15 @@ class onewireCmd extends cmd
 	/*TODO*/		message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
 					return false;
 				}
-				if((int) $temp == 85){}
+				if((int) $temp == 85){
+					$loop_sec_read++;
+				}
 			}
 			if($temp != 85)
 				{
 					$loop_sec_read =2;
 				} 
-			$loop_sec_read++;
-		}while($loop_sec_read < 2);
+		}
 		
 
 
