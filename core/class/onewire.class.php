@@ -657,9 +657,9 @@ class onewireCmd extends cmd
 	/*TODO*/		message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
 					return false;
 				}
-				
+				if((int) $temp == 85){}
 			}
-			if($temp !== 85)
+			if($temp != 85)
 				{
 					$loop_sec_read =2;
 				} 
