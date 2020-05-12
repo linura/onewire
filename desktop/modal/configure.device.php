@@ -170,8 +170,8 @@ $sameDevices = array();
         var sensor_id = $('.onewireParameters[data-l2key=sensor_id]').val();
         var sensor_class = $('.onewireParameters[data-l2key=in_parametersReadId]').val();
         /*TODO*/
-        /*window.alert("sensor id " + sensor_id);
-        window.alert("sensor class " + sensor_class);*/
+        /*console.debug("sensor id " + sensor_id);
+        console.debug("sensor class " + sensor_class);*/
         if (sensor_class != '' && sensor_id != '')
             configureDeviceLoad(sensor_id, sensor_class);
         else
