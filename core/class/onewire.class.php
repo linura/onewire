@@ -601,6 +601,11 @@ class onewireCmd extends cmd
 			return onewireCmd::TypeOwserver($ajax);
 		}
 	}
+/*TODO Creation de la fonction getvalue avec AJAX 12/05/2020 LEBANSAIS C*/
+	public function getvalueAjax($ajax = true)
+	{
+		return $this->TypeGPIO_light_esclave($ajax);
+	}
 
 
 
