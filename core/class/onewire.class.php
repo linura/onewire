@@ -629,11 +629,8 @@ class onewireCmd extends cmd
 
 	public  function execute($_options = array())
 	{
-		$loop_sec_read = 0;
-		do
-		{
-			$equipement = eqLogic::byId($this->getEqLogic_id(), 'onewire');
-			log::add('onewire', 'debug', 'Execute()-> Lecture du composant : ' . $this->getConfiguration('instanceId') . ' avec la class ' . $this->getConfiguration('composantClass'));
+		$equipement = eqLogic::byId($this->getEqLogic_id(), 'onewire');
+		log::add('onewire', 'debug', 'Execute()-> Lecture du composant : ' . $this->getConfiguration('instanceId') . ' avec la class ' . $this->getConfiguration('composantClass'));
 
 		if ($this->getType() != 'info') {
 			log::add('onewire', 'debug', 'Type action');
@@ -653,19 +650,13 @@ class onewireCmd extends cmd
 				}
 			}
 			$temp = $this->getValue(false);
-			
-			if ((int) $temp == 85 && $loop_sec_read == 1) {
+
+			if ((int) $temp == 85) {
 				log::add('onewire', 'debug', 'La sonde est en erreur on ne fait rien. Merci de verifier le composant ou le cablage');
 /*TODO*/		message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
 				return false;
 			}
-			if ((int) $temp != 85 ) {
-				$loop_sec_read = 2;
-			}
-			$loop_sec_read++;
-		}while($loop_sec_read < 2);
-		
-	}
+		}
 
 
 		/*Gestion des alertes*/
