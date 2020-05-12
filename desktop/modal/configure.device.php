@@ -100,8 +100,10 @@ $sameDevices = array();
                         </div>
 
                         <label class="col-lg-1 control-label tooltips">{{Valeur}}</label>
-                        <div class="col-lg-1  control-label " id="view_readparameter">
-
+                        <!-- TODO Ajout de div class =col-lg-1-->
+                        <div class="col-lg-1">
+                            <div class="col-lg-1  control-label " id="view_readparameter">
+                            </div>
                         </div>
                         <div class="col-lg-3">
                             <a class="btn btn-warning pull-right bt_configureReadParameter" style="color : white;" data-force="1"><i class="fa fa-refresh"></i> {{Demander}}</a>
