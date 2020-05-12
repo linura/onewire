@@ -184,7 +184,7 @@ $sameDevices = array();
     function configureDeviceLoad(sensor_id, sensor_class) {
         window.alert("sensor id " + sensor_id);
         window.alert("sensor class " + sensor_class);
-       /* $.ajax({ // fonction permettant de faire de l'ajax
+        $.ajax({ // fonction permettant de faire de l'ajax
             type: "POST", // methode de transmission des données au fichier php
             url: "plugins/onewire/core/ajax/onewire.ajax.php", // url du fichier php
             data: {
@@ -200,20 +200,6 @@ $sameDevices = array();
             success: function(data) { // si l'appel a bien fonctionné
                 //$('#view_readparameter').html(data);
                 window.alert(data);
-            }
-        });*/
-        $.ajax({
-            type: "POST",
-            url: "plugins/onewire/core/ajax/onewire.ajax.php",
-            data: "getComposants",
-            dataType: 'json',
-            error: function(request, status, error) {
-                handleAjaxError(request, status, error, $('#div_configureDeviceAlert'));
-                window.alert("Erreur fonction jeeson" + error);
-            },
-            success: function(data) { // si l'appel a bien fonctionné
-                $('#view_readparameter').html(data);
-                window.alert(data.name);
             }
         });
     }
