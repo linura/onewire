@@ -647,9 +647,10 @@ class onewireCmd extends cmd
 				$temp =  $this->sendValue();
 			}
 		} else {
-			if ($this->getEventOnly() == 0) {
-				$this->setEventOnly(1);
-				$this->save();
+				if ($this->getEventOnly() == 0) {
+					$this->setEventOnly(1);
+					$this->save();
+				}
 			}
 			$temp = $this->getValue(false);
 			
