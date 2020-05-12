@@ -82,7 +82,6 @@ try {
     }
 
     if (init('action') == 'getValue') {
-        window.alert("Entrer dans ajax php getvalue");
         $sensor_class =  init('sensor_class');
         $cmd = cmd::byId(init('sensor_id'));
         return $cmd->getValue(true);
