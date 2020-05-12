@@ -169,9 +169,6 @@ $sameDevices = array();
     $('.bt_configureReadParameter').on('click', function() {
         var sensor_id = $('.onewireParameters[data-l2key=sensor_id]').val();
         var sensor_class = $('.onewireParameters[data-l2key=in_parametersReadId]').val();
-        /*TODO*/
-        /*console.debug("sensor id " + sensor_id);
-        console.debug("sensor class " + sensor_class);*/
         if (sensor_class != '' && sensor_id != '')
             configureDeviceLoad(sensor_id, sensor_class);
         else
@@ -195,7 +192,7 @@ $sameDevices = array();
             dataType: 'json',
             error: function(request, status, error) {
                 handleAjaxError(request, status, error, $('#div_configureDeviceAlert'));
-                window.alert("Erreur apres fonction Ajax load device " + error);
+                console.debug(request + ' ' + status + ' ' + error);
             },
             success: function(data) { // si l'appel a bien fonctionné
                 //$('#view_readparameter').html(data);
