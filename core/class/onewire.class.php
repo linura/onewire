@@ -606,7 +606,6 @@ class onewireCmd extends cmd
 	{
 		console.debug("In getValueAjax");
 		//return $this->TypeGPIO_light_esclave($ajax);
-		return "18.5";
 		console.debug("out getValueAjax");
 	}
 
