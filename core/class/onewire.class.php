@@ -630,7 +630,7 @@ class onewireCmd extends cmd
 	public  function execute($_options = array())
 	{
 		$loop_sec_read = 0;
-		do{
+//		do{
 			$equipement = eqLogic::byId($this->getEqLogic_id(), 'onewire');
 			log::add('onewire', 'debug', 'Execute()-> Lecture du composant : ' . $this->getConfiguration('instanceId') . ' avec la class ' . $this->getConfiguration('composantClass'));
 	
@@ -664,7 +664,7 @@ class onewireCmd extends cmd
 					$loop_sec_read =2;
 				} 
 			$loop_sec_read++;
-		}while($loop_sec_read < 2)
+	//	}while($loop_sec_read < 2)
 		
 
 
