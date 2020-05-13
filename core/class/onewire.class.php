@@ -632,8 +632,7 @@ class onewireCmd extends cmd
 
 	public  function execute($_options = array())
 	{
-		$loop_sec_read = 0;
-		while ($loop_sec_read < 2) {	//boucle de seconde lecture en cas d'erreur sur lors de la premiere lecture pour confirmer l'erreur
+		
 			$equipement = eqLogic::byId($this->getEqLogic_id(), 'onewire');
 			log::add('onewire', 'debug', 'Execute()-> Lecture du composant : ' . $this->getConfiguration('instanceId') . ' avec la class ' . $this->getConfiguration('composantClass'));
 
@@ -653,21 +652,24 @@ class onewireCmd extends cmd
 					$this->setEventOnly(1);
 					$this->save();
 				}
-				$temp = $this->getValue(false);
+				$loop_sec_read = 0;
+				while ($loop_sec_read < 2) {	//boucle de seconde lecture en cas d'erreur sur lors de la premiere lecture pour confirmer l'erreur
+					$temp = $this->getValue(false);
 
-				if ((int) $temp == 85 && $loop_sec_read == 1) {
-					log::add('onewire', 'debug', 'La sonde est en erreur on ne fait rien. Merci de verifier le composant ou le cablage');
-					message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
-					return false;
-				}
-				if ((int) $temp == 85) {
-					$loop_sec_read++;
+					if ((int) $temp == 85 && $loop_sec_read == 1) {
+						log::add('onewire', 'debug', 'La sonde est en erreur on ne fait rien. Merci de verifier le composant ou le cablage');
+						message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
+						return false;
+					}
+					if ((int) $temp == 85) {
+						$loop_sec_read++;
+					}
+					if ($temp != 85) {
+						$loop_sec_read = 2;
+					}
 				}
 			}
-			if ($temp != 85) {
-				$loop_sec_read = 2;
-			}
-		}
+			
 
 		/*Gestion des alertes*/
 		onewireCmd::MailAlert($this, $temp);
