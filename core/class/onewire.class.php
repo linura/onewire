@@ -665,7 +665,7 @@ class onewireCmd extends cmd
 					if ((int) $temp == 85) {
 						$loop_sec_read++;
 						log::add('onewire','debug','**********premiere lecture du composant incorrect, nous effectuons une seconde lecture************');
-						sleep(2);
+						sleep(5);
 					}
 					if ($temp != 85) {
 						$loop_sec_read = 2; //arret de la boucle si la premiere lecture est bonne
