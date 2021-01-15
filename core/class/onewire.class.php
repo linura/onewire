@@ -481,7 +481,7 @@ class onewireCmd extends cmd
 				$temp = stream_get_contents($output);
 				/* TODO */
 				if ($temp === NULL || !$temp)
-					message::add('onewire', 'Une sonde est en erreur. Merci de verifier le bus ou la sonde');
+					message::add('onewire', 'Une sonde est en erreur.' . $sonde . ' Merci de verifier le bus ou la sonde');
 				if (!$temp || $temp === NULL)
 					$temp = trim(exec($sonde));
 				log::add('onewire', 'debug', 'TypeGPIO_light_esclave->Valeur  trouvée : ' . $temp);
@@ -509,7 +509,7 @@ class onewireCmd extends cmd
 			echo json_encode($temp);
 		} else {
 			if (!$temp || $temp === NULL)
-				/*TODO*/			message::add('onewire', 'Une sonde est en erreur. Merci de verifier le bus ou la sonde');
+				/*TODO*/			message::add('onewire', 'Une sonde est en erreur. ' . $sonde . 'Merci de verifier le bus ou la sonde');
 			return $temp;
 		}
 	}
@@ -657,7 +657,7 @@ class onewireCmd extends cmd
 
 					$temp = $this->getValue(false);
 
-					if ((int) $temp == 85 && ($loop_sec_read == 1 || $loop_sec_read == 2)) {
+					if ((int) $temp == 85 && ($loop_sec_read == 2)) {
 						log::add('onewire', 'debug', 'La sonde est en erreur on ne fait rien. Merci de verifier le composant ou le cablage');
 						message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
 						return false;
