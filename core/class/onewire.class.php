@@ -82,7 +82,7 @@ class onewire extends eqLogic
 	{
 		foreach (eqLogic::byType('onewire') as $eqLogic) {
 			$autorefresh = $eqLogic->getConfiguration('autorefresh');
-			$autorefresh = ($autorefresh == "" ? '* * * * * *' : $autorefresh);
+			$autorefresh = ($autorefresh == "" ? '* * * * *' : $autorefresh);
 			if ($eqLogic->getIsEnable() == 1 && $autorefresh != '') {
 				try {
 					$c = new Cron\CronExpression($autorefresh, new Cron\FieldFactory);
