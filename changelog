@@ -1,4 +1,4 @@
-. 03/05/2020
+/. 03/05/2020
   - Mise à jour du plugin en version 4 de jeedom
   - Modification de différents boutons et icone
   - Mise a jour de l'affichage des equipements en fonction de leur type de connexion
@@ -7,3 +7,5 @@
 07/05/2020
   - Ajout d'un message dans le centre de message si un composant ne repond pas ou est absent du bus
   - Ajout d'un message dans le centre de message si un composant repond une valeur erronée par un defaut de bus (8500)
+09/03/2022
+  - Test de mise à jour sur Jeedom V4.2
