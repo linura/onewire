@@ -5,7 +5,7 @@
     <description>Plugin permettant de gérer le Bus 1wire, repris par LEBANSAIS Christophe le 03/05/2020</description>
     <icon>fa fa-caret-square-o-right</icon>
     <licence>AGPL</licence>
-    <author>Mickael Hurier</author>
+    <author>Mickael Hurier / LEBANSAIS Christophe</author>
     <installation>
         Selectionner dans la liste deroulante pour afficher le srcipt d installation.
     </installation>
