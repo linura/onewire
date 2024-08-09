@@ -668,7 +668,7 @@ class onewireCmd extends cmd
 						sleep(5);
 					}
 					if ($temp != 85) {
-						$loop_sec_read = 3; //arret de la boucle si la premiere lecture est bonne
+						$loop_sec_read = 4; //arret de la boucle si la premiere lecture est bonne
 					}
 				}
 			}
