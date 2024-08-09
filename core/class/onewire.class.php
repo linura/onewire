@@ -18,6 +18,8 @@
 /*LEBANSAIS C 07/05/2020 
 *		- modification de TypeGPIO_light pour afficher une erreur si le composant n'est pas sur le bus ou ne repond pas
 *		- modification de execute pour afficher un message dans le centre de message en cas de valeur incorecte
+* LEBANSAIS C 12/05/2020
+*		- modification de execute pour creer une boucle de relecture de la sonde en cas de defaut pour confirmer celui-ci
 */
 
 /* * *************sudo /etc/init.d/owserver restart**************Includes********************************* */
@@ -80,7 +82,7 @@ class onewire extends eqLogic
 	{
 		foreach (eqLogic::byType('onewire') as $eqLogic) {
 			$autorefresh = $eqLogic->getConfiguration('autorefresh');
-			$autorefresh = ($autorefresh == "" ? '* * * * * *' : $autorefresh);
+			$autorefresh = ($autorefresh == "" ? '* * * * *' : $autorefresh);
 			if ($eqLogic->getIsEnable() == 1 && $autorefresh != '') {
 				try {
 					$c = new Cron\CronExpression($autorefresh, new Cron\FieldFactory);
@@ -477,9 +479,9 @@ class onewireCmd extends cmd
 				$output = ssh2_exec($connection, $sonde);
 				stream_set_blocking($output, true);
 				$temp = stream_get_contents($output);
-/* TODO */		
+				/* TODO */
 				if ($temp === NULL || !$temp)
-					message::add('onewire', 'Une sonde est en erreur. Merci de verifier le bus ou la sonde');
+					message::add('onewire', 'Une sonde est en erreur.' . $sonde . ' Merci de verifier le bus ou la sonde');
 				if (!$temp || $temp === NULL)
 					$temp = trim(exec($sonde));
 				log::add('onewire', 'debug', 'TypeGPIO_light_esclave->Valeur  trouvée : ' . $temp);
@@ -507,8 +509,7 @@ class onewireCmd extends cmd
 			echo json_encode($temp);
 		} else {
 			if (!$temp || $temp === NULL)
-/*TODO*/			
-				message::add('onewire', 'Une sonde est en erreur. Merci de verifier le bus ou la sonde');
+				/*TODO*/			message::add('onewire', 'Une sonde est en erreur. ' . $sonde . 'Merci de verifier le bus ou la sonde');
 			return $temp;
 		}
 	}
@@ -603,6 +604,13 @@ class onewireCmd extends cmd
 			return onewireCmd::TypeOwserver($ajax);
 		}
 	}
+	/*TODO Creation de la fonction getvalue avec AJAX 12/05/2020 LEBANSAIS C*/
+	public function getvalueAjax()
+	{
+		console . debug("In getValueAjax");
+		//return $this->TypeGPIO_light_esclave($ajax);
+		console . debug("out getValueAjax");
+	}
 
 
 
@@ -624,34 +632,47 @@ class onewireCmd extends cmd
 
 	public  function execute($_options = array())
 	{
-		$equipement = eqLogic::byId($this->getEqLogic_id(), 'onewire');
-		log::add('onewire', 'debug', 'Execute()-> Lecture du composant : ' . $this->getConfiguration('instanceId') . ' avec la class ' . $this->getConfiguration('composantClass'));
+		
+			$equipement = eqLogic::byId($this->getEqLogic_id(), 'onewire');
+			log::add('onewire', 'debug', 'Execute()-> Lecture du composant : ' . $this->getConfiguration('instanceId') . ' avec la class ' . $this->getConfiguration('composantClass'));
 
-		if ($this->getType() != 'info') {
-			log::add('onewire', 'debug', 'Type action');
-			if ($equipement->getConfiguration('onewire_mode') == 'owfs') {/*Si action et mode OWFS*/
-				log::add('onewire', 'debug', 'Type action mode OWFS');
-				$temp =  $this->sendValue();
+			if ($this->getType() != 'info') {
+				log::add('onewire', 'debug', 'Type action');
+				if ($equipement->getConfiguration('onewire_mode') == 'owfs') {/*Si action et mode OWFS*/
+					log::add('onewire', 'debug', 'Type action mode OWFS');
+					$temp =  $this->sendValue();
+				} else {
+					/*Si action et mode GPOI pas de commande possible*/
+					log::add('onewire', 'debug', 'Type action mode GPIO');
+					log::add('onewire', 'debug', 'Pas d action possible en GPIO seulement avec le dongle.');
+					$temp =  $this->sendValue();
+				}
 			} else {
-				/*Si action et mode GPOI pas de commande possible*/
-				log::add('onewire', 'debug', 'Type action mode GPIO');
-				log::add('onewire', 'debug', 'Pas d action possible en GPIO seulement avec le dongle.');
-				$temp =  $this->sendValue();
-			}
-		} else {
-			if ($this->getEventOnly() == 0) {
-				$this->setEventOnly(1);
-				$this->save();
-			}
-			$temp = $this->getValue(false);
+				if ($this->getEventOnly() == 0) {
+					$this->setEventOnly(1);
+					$this->save();
+				}
+				$loop_sec_read = 0;
+				while ($loop_sec_read < 3) {	//boucle de seconde lecture en cas d'erreur sur lors de la premiere lecture pour confirmer l'erreur
 
-			if ((int) $temp == 85) {
-				log::add('onewire', 'debug', 'La sonde est en erreur on ne fait rien. Merci de verifier le composant ou le cablage');
-/*TODO*/		message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
-				return false;
-			}
-		}
+					$temp = $this->getValue(false);
 
+					if ((int) $temp == 85 && ($loop_sec_read == 2)) {
+						log::add('onewire', 'debug', 'La sonde est en erreur on ne fait rien. Merci de verifier le composant ou le cablage');
+						message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
+						return false;
+					}
+					if ((int) $temp == 85) {
+						$loop_sec_read++;
+						log::add('onewire','debug','**********premiere lecture du composant incorrect, nous effectuons une seconde lecture************');
+						sleep(5);
+					}
+					if ($temp != 85) {
+						$loop_sec_read = 3; //arret de la boucle si la premiere lecture est bonne
+					}
+				}
+			}
+			
 
 		/*Gestion des alertes*/
 		onewireCmd::MailAlert($this, $temp);
@@ -663,8 +684,6 @@ class onewireCmd extends cmd
 				$temp =  $temp / (1.0546 - (0.00216 * $temp));
 				log::add('onewire', 'debug', 'composnant Humidity Sensor detecter la formule est donc : Humidité réelle = (humidité relevée)/(1.0546 –0.00216*température relevée, voir la doc )');
 			}
-
-
 			$temp = $temp + $this->getConfiguration('calibrer', 0);
 			$replace['#state#'] = $temp;
 			log::add('onewire', 'debug', 'Le composnant  ' . $this->getConfiguration('instanceId') . ' a une valeur de ' . $temp . ' (#state# = ' . number_format($replace['#state#'], 2) . ')');
