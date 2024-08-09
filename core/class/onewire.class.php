@@ -653,18 +653,18 @@ class onewireCmd extends cmd
 					$this->save();
 				}
 				$loop_sec_read = 0;
-				while ($loop_sec_read < 3) {	//boucle de seconde lecture en cas d'erreur sur lors de la premiere lecture pour confirmer l'erreur
+				while ($loop_sec_read <=3) {	//boucle de seconde lecture en cas d'erreur sur lors de la premiere lecture pour confirmer l'erreur
 
 					$temp = $this->getValue(false);
 
-					if ((int) $temp == 85 && ($loop_sec_read == 2)) {
+					if ((int) $temp == 85 && ($loop_sec_read == 3)) {
 						log::add('onewire', 'debug', 'La sonde est en erreur on ne fait rien. Merci de verifier le composant ou le cablage');
 						message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
 						return false;
 					}
-					if ((int) $temp == 85) {
+					if ((int) $temp == 85 && ($loop_sec_read < 3)) {
 						$loop_sec_read++;
-						log::add('onewire','debug','**********premiere lecture du composant incorrect, nous effectuons une seconde lecture************');
+						log::add('onewire','debug','**********précédente lecture du composant incorrect, nous effectuons une autre lecture************');
 						sleep(5);
 					}
 					if ($temp != 85) {
