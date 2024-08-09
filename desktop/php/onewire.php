@@ -27,7 +27,8 @@ if ($deamonRunning['state'] != 'ok') {
 
 ?>
 <!-- script pour les icons perso -->
-<script src="https://kit.fontawesome.com/4f90f8faf4.js" crossorigin="anonymous"></script>
+<!-- TODO -->
+<!-- <script src="https://kit.fontawesome.com/4f90f8faf4.js" crossorigin="anonymous"></script> -->
 <!-- Container global (Ligne bootstrap) -->
 <div class="row row-overflow">
     <!-- Menu gestion -->
