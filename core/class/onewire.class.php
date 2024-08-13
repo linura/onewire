@@ -20,6 +20,8 @@
 *		- modification de execute pour afficher un message dans le centre de message en cas de valeur incorecte
 * LEBANSAIS C 12/05/2020
 *		- modification de execute pour creer une boucle de relecture de la sonde en cas de defaut pour confirmer celui-ci
+* LEBANSAIS C 12/08/2024 
+*		- Augmentation du nombre de tour de la boucle car réseau instable
 */
 
 /* * *************sudo /etc/init.d/owserver restart**************Includes********************************* */
