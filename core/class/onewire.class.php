@@ -484,7 +484,7 @@ class onewireCmd extends cmd
 				/* TODO */
 				if ($temp === NULL || !$temp) /* Modifier le 06/05/26 pour afficher le nom de la sonde en defaut */
 					/*message::add('onewire', 'Une sonde est en erreur.' . $sonde . ' Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light_esclave');*/
-					message::add('onewire', 'Une sonde est en erreur.' . $this->getName() . ' Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light_esclave');
+					message::add('onewire', 'Une sonde est en erreur.' . $equipement->getName() . ' Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light_esclave');
 				if (!$temp || $temp === NULL)
 					$temp = trim(exec($sonde));
 				log::add('onewire', 'debug', 'TypeGPIO_light_esclave->Valeur  trouvée : ' . $temp);
@@ -500,6 +500,7 @@ class onewireCmd extends cmd
 	}
 	public function TypeGPIO_light($ajax = false)
 	{
+		$equipement = eqLogic::byId($this->getEqLogic_id(), 'onewire');
 		log::add('onewire', 'debug', 'TypeGPIO_light()-> Traitement du composant : ' . $this->getConfiguration('instanceId'));
 		$sonde = "find /sys/bus/w1/devices/ -name  " . trim(str_replace(".", "-", $this->getConfiguration('instanceId'))) . "  -exec cat {}/w1_slave \\; | grep \"t=\" | awk -F \"t=\" '{print $2/1000}'";
 		$temp = trim(exec($sonde));
@@ -511,8 +512,9 @@ class onewireCmd extends cmd
 			onewireCmd::AddSendHistory($this->getConfiguration('instanceId'), $this->getConfiguration('composantClass'), $temp, 'receive');
 			echo json_encode($temp);
 		} else {
-			if (!$temp || $temp === NULL)
-				/*TODO*/			message::add('onewire', 'Une sonde est en erreur. ' . $sonde . 'Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light');
+			if (!$temp || $temp === NULL)/* Modifier le 06/05/26 pour afficher le nom de la sonde en defaut */
+				/*TODO*/			/*message::add('onewire', 'Une sonde est en erreur. ' . $sonde . 'Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light');*/
+					message::add('onewire', 'Une sonde est en erreur. ' . $equipement->getName() . 'Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light');
 			return $temp;
 		}
 	}
