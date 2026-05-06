@@ -482,8 +482,9 @@ class onewireCmd extends cmd
 				stream_set_blocking($output, true);
 				$temp = stream_get_contents($output);
 				/* TODO */
-				if ($temp === NULL || !$temp)
-					message::add('onewire', 'Une sonde est en erreur.' . $sonde . ' Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light_esclave');
+				if ($temp === NULL || !$temp) /* Modifier le 06/05/26 pour afficher le nom de la sonde en defaut */
+					/*message::add('onewire', 'Une sonde est en erreur.' . $sonde . ' Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light_esclave');*/
+					message::add('onewire', 'Une sonde est en erreur.' . $this->getName() . ' Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light_esclave');
 				if (!$temp || $temp === NULL)
 					$temp = trim(exec($sonde));
 				log::add('onewire', 'debug', 'TypeGPIO_light_esclave->Valeur  trouvée : ' . $temp);
