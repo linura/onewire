@@ -483,7 +483,7 @@ class onewireCmd extends cmd
 				$temp = stream_get_contents($output);
 				/* TODO */
 				if ($temp === NULL || !$temp)
-					message::add('onewire', 'Une sonde est en erreur.' . $sonde . ' Merci de verifier le bus ou la sonde');
+					message::add('onewire', 'Une sonde est en erreur.' . $sonde . ' Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light_esclave');
 				if (!$temp || $temp === NULL)
 					$temp = trim(exec($sonde));
 				log::add('onewire', 'debug', 'TypeGPIO_light_esclave->Valeur  trouvée : ' . $temp);
@@ -511,7 +511,7 @@ class onewireCmd extends cmd
 			echo json_encode($temp);
 		} else {
 			if (!$temp || $temp === NULL)
-				/*TODO*/			message::add('onewire', 'Une sonde est en erreur. ' . $sonde . 'Merci de verifier le bus ou la sonde');
+				/*TODO*/			message::add('onewire', 'Une sonde est en erreur. ' . $sonde . 'Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light');
 			return $temp;
 		}
 	}
@@ -634,7 +634,7 @@ class onewireCmd extends cmd
 
 	public  function execute($_options = array())
 	{
-		
+
 			$equipement = eqLogic::byId($this->getEqLogic_id(), 'onewire');
 			log::add('onewire', 'debug', 'Execute()-> Lecture du composant : ' . $this->getConfiguration('instanceId') . ' avec la class ' . $this->getConfiguration('composantClass'));
 
@@ -659,10 +659,10 @@ class onewireCmd extends cmd
 				while ($loop_sec_read <= $Nb_loop) {	//boucle de seconde lecture en cas d'erreur sur lors de la premiere lecture pour confirmer l'erreur
 
 					$temp = $this->getValue(false);
-					/*TODO*/ /*!$temp || $temp === NULL*/
+
 					if ((int) $temp == 85 && ($loop_sec_read == $Nb_loop)) {
 						log::add('onewire', 'debug', 'La sonde est en erreur on ne fait rien. Merci de verifier le composant ou le cablage');
-						message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
+						message::add('onewire', 'La sonde ' . $equipement->getName() . ' est en erreur FCT_Execute. Merci de verifier le composant ou le cablage. Valeur lue: ' . $temp);
 						return false;
 					}
 					if ((int) $temp == 85 && ($loop_sec_read < $Nb_loop)) {
