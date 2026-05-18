@@ -22,6 +22,9 @@
 *		- modification de execute pour creer une boucle de relecture de la sonde en cas de defaut pour confirmer celui-ci
 * LEBANSAIS C 12/08/2024 
 *		- Augmentation du nombre de tour de la boucle car réseau instable
+* LEBANSAIS C 18/05/2026
+* 		- Amélioration de la gestion des défauts en indiquant la fonction source du défaut
+*		- Ajouter une boucle de lecture dans la fonction TypeGPIO_Light pour limiter les défauts de lecture du fichier device
 */
 
 /* * *************sudo /etc/init.d/owserver restart**************Includes********************************* */
@@ -503,9 +506,23 @@ class onewireCmd extends cmd
 		$equipement = eqLogic::byId($this->getEqLogic_id(), 'onewire');
 		log::add('onewire', 'debug', 'TypeGPIO_light()-> Traitement du composant : ' . $this->getConfiguration('instanceId'));
 		$sonde = "find /sys/bus/w1/devices/ -name  " . trim(str_replace(".", "-", $this->getConfiguration('instanceId'))) . "  -exec cat {}/w1_slave \\; | grep \"t=\" | awk -F \"t=\" '{print $2/1000}'";
+      /*find /sys/bus/w1/devices/ -name "28-3298bd116461" -exec cat {}/w1_slave \; | grep "t=" | awk -F "t=" '{print $2/1000}'*/
 		$temp = trim(exec($sonde));
-		if (!$temp || $temp === NULL)
-			$temp = trim(exec($sonde));
+        /* modifier le 18/05/26 pour creer une boucle de lecture en cas d'erreur ainsi qu'une pause de 5seconde entre chaque lecture */
+		/*if (!$temp || $temp === NULL)
+			$temp = trim(exec($sonde));*/
+      	$loop = 3;
+		$nbtour = 0;
+		while ($nbtour <= $loop) {		//boucle de seconde lecture en cas d'erreur sur lors de la premiere lecture pour confirmer l'erreur
+			if (!$temp || $temp === NULL){
+				$nbtour = nbtour + 1;
+				$temp = trim(exec($sonde));
+              	sleep(5);
+			}	
+			else{
+				$nbtour = $loop + 1;
+			}
+		}		
 		log::add('onewire', 'debug', 'TypeGPIO_light->Valeur  trouvée : ' . $temp);
 
 		if ($ajax) {
@@ -514,7 +531,7 @@ class onewireCmd extends cmd
 		} else {
 			if (!$temp || $temp === NULL)/* Modifier le 06/05/26 pour afficher le nom de la sonde en defaut */
 				/*TODO*/			/*message::add('onewire', 'Une sonde est en erreur. ' . $sonde . 'Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light');*/
-					message::add('onewire', 'Une sonde est en erreur. ' . $equipement->getName() . 'Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light');
+					message::add('onewire', 'Une sonde est en erreur. ' . $equipement->getName() . ' Merci de verifier le bus ou la sonde, FCT_TypeGPIO_light');
 			return $temp;
 		}
 	}
